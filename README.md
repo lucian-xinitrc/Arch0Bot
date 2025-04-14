@@ -1,4 +1,4 @@
-# Gethonis
+# Arch0
 
 ## $ intro
 This is a small Python-based project that leverages APIs from OpenAI and Disnake to manage and fulfil tasks on a discord server. 
