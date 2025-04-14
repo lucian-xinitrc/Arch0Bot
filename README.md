@@ -7,7 +7,7 @@ This is a small Python-based project that leverages APIs from OpenAI and Disnake
 The bots's primary function is to handle conversations and manage discord servers.
 
 ## $ languages used
-The website was built using the following technologies:
+The bot was built using the following technologies:
 
 ![Python, Vim](https://skillicons.dev/icons?i=python,vim)
 
