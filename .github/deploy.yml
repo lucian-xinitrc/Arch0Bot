@@ -21,9 +21,8 @@ jobs:
             cd /home/lucian/Arch0
             git pull
             sudo systemctl daemon-reload
-            sudo systemctl stop arch0.service
-            sudo systemctl start arch0.service
             sudo systemctl restart arch0.service
+            
       - name: Recovery: force checkout and retry
         if: failure()
         uses: appleboy/ssh-action@v1.0.3
@@ -38,6 +37,4 @@ jobs:
             git clean -fd
             git pull
             sudo systemctl daemon-reload
-            sudo systemctl stop arch0.service
-            sudo systemctl start arch0.service
             sudo systemctl restart arch0.service
