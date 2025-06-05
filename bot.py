@@ -1,4 +1,4 @@
 from utils import discordbot as dis
-# Workflow test
+# Workflow testing
 if __name__ == "__main__":
 	dis.DiscordBot()
