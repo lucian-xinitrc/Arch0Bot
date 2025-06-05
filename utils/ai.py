@@ -36,6 +36,25 @@ class ArtificialIntelligence():
 		async with ctx.channel.typing():
 			response = await asyncio.to_thread(bot.get_message, message)
 			await ctx.send(response)
+
+	@prompt.slash_command(description="Gethonis")
+	async def gethStreaming(inter, ctx, message):
+		await ctx.response.defer()
+		msg = await inter.followup.send("Please wait...")
+		bot = gethonis.Gethonis("TEST", "gethonis", False, "http://46.202.141.49:8000")
+		response = bot.get_message(message)
+		full_message = ""
+		for chunk in response.iter_content(chunk_size=1024):
+			if chunk:
+				decoded_chunk = chunk.decode("utf-8")
+				full_message += decoded_chunk
+				msg.edit(decoded_chunk)
+				sleep(0.1)
+			bot.data["messages"].append({"role": "assistant", "content": full_message})
+
+		async with ctx.channel.typing():
+			response = await asyncio.to_thread(bot.get_message, message)
+			await ctx.send(response)
 	
 	@prompt.slash_command(description="Image Generator")
 	async def image(inter, ctx, arg):
