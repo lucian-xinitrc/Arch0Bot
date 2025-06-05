@@ -50,10 +50,6 @@ class ArtificialIntelligence():
 				await ctx.followup.send(decoded_chunk)
 				await asyncio.sleep(0.1)
 		bot.data["messages"].append({"role": "assistant", "content": full_message})
-
-		async with ctx.channel.typing():
-			response = await asyncio.to_thread(bot.get_message, message)
-			await ctx.send(response)
 	
 	@prompt.slash_command(description="Image Generator")
 	async def image(inter, ctx, arg):
