@@ -20,16 +20,12 @@ class ArtificialIntelligence():
 			async with message.channel.typing():
 				messages.append({"role": "user", "content": message.content})
 				client = OpenAI(api_key=config.Config().api_key_ai)
-				bot = gethonis.Gethonis("TEST", "gethonis", False, "http://46.202.141.49:8000")
-				response = bot.send_message(message)
-				"""
 				response = client.chat.completions.create(
 			    	model="gpt-4o",
 			    	messages=messages,
 			    	stream=False
 				)
-				"""
-				#messages.append(response.choices[0].message)
+				messages.append(response.choices[0].message)
 				await message.reply(response)
 
 	@prompt.slash_command(description="Gethonis")
