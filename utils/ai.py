@@ -40,7 +40,6 @@ class ArtificialIntelligence():
 	@prompt.slash_command(description="Gethonis")
 	async def gethStreaming(inter, ctx, message):
 		await ctx.response.defer()
-		msg = await inter.followup.send("Please wait...")
 		bot = gethonis.Gethonis("TEST", "gethonis", False, "http://46.202.141.49:8000")
 		response = bot.get_message(message)
 		full_message = ""
@@ -48,7 +47,7 @@ class ArtificialIntelligence():
 			if chunk:
 				decoded_chunk = chunk.decode("utf-8")
 				full_message += decoded_chunk
-				msg.edit(decoded_chunk)
+				ctx.send(decoded_chunk)
 				sleep(0.1)
 			bot.data["messages"].append({"role": "assistant", "content": full_message})
 
