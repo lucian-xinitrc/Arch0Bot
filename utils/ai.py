@@ -1,14 +1,16 @@
 import disnake
 import openai
 import requests
+from . import gethonis
 from . import config
 from openai import OpenAI
 from disnake.ext import commands
 
-messages = [{"role": "system", "content": "You are a helpful assistant"}]
+messages = [{"role": "system", "content": "You are a helpful assistant for an arch linux community named Arch0 with id 1148252680565821500, your coder and creator is arch0tic or id 1135659932000202942"}]
 
 class ArtificialIntelligence():
 	prompt = config.Config().bot
+	
 	@prompt.event
 	async def on_message(message):
 		bot = config.Config().bot
@@ -16,16 +18,29 @@ class ArtificialIntelligence():
 			return
 		if bot.user in message.mentions:
 			async with message.channel.typing():
-				messages.append({"role": "user", "content": f"Please write in that {config.Config().ai_mood} the following message and in the language that is in it, please adapt and keep conversation: {message.content}"})
+				messages.append({"role": "user", "content": message.content})
 				client = OpenAI(api_key=config.Config().api_key_ai)
-				
+				bot = gethonis.Gethonis("TEST", "gethonis", False, "http://46.202.141.49:8000")
+				response = bot.send_message(message)
+				"""
 				response = client.chat.completions.create(
 			    	model="gpt-4o",
 			    	messages=messages,
 			    	stream=False
 				)
-				messages.append(response.choices[0].message)
-				await message.reply(str(response.choices[0].message.content))
+				"""
+				#messages.append(response.choices[0].message)
+				await message.reply(response)
+
+	@prompt.slash_command(description="Gethonis")
+	async def geth(inter, ctx, message):
+		try:
+			bot = gethonis.Gethonis("TEST", "gethonis", False, "http://46.202.141.49:8000")
+			async with inter.channel.typing():
+				response = bot.send_message(message)
+				await ctx.send(response)
+		except Exception as e:
+			await ctx.send(e)
 	
 	@prompt.slash_command(description="Image Generator")
 	async def image(inter, ctx, arg):
