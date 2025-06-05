@@ -47,8 +47,8 @@ class ArtificialIntelligence():
 			if chunk:
 				decoded_chunk = chunk.decode("utf-8")
 				full_message += decoded_chunk
-				ctx.send(decoded_chunk)
-				sleep(0.1)
+				await ctx.followup.send(decoded_chunk)
+				await asyncio.sleep(0.1)
 			bot.data["messages"].append({"role": "assistant", "content": full_message})
 
 		async with ctx.channel.typing():
