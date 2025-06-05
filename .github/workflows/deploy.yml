@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - tests 
 
 jobs:
   deploy:
@@ -21,4 +20,4 @@ jobs:
           script: |
             cd /home/lucian/Arch0
             git pull
-            systemctl restart arch0.service
+            sudo systemctl restart arch0.service
