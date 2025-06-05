@@ -32,16 +32,10 @@ class ArtificialIntelligence():
 	@prompt.slash_command(description="Gethonis")
 	async def geth(inter, ctx, message):
 		await ctx.response.defer()
-		try:
-			bot = gethonis.Gethonis("TEST", "gethonis", False, "http://46.202.141.49:8000")
-			try:
-				async with ctx.channel.typing():
-					response = await asyncio.to_thread(bot.get_message, message)
-					await ctx.send(response)
-			except:
-				await ctx.send(e)
-		except Exception as e:
-			await ctx.send(e)
+		bot = gethonis.Gethonis("TEST", "gethonis", False, "http://46.202.141.49:8000")
+		async with ctx.channel.typing():
+			response = await asyncio.to_thread(bot.get_message, message)
+			await ctx.send(response)
 	
 	@prompt.slash_command(description="Image Generator")
 	async def image(inter, ctx, arg):
