@@ -33,7 +33,7 @@ class ArtificialIntelligence():
 	async def geth(inter, ctx, message):
 		try:
 			bot = gethonis.Gethonis("TEST", "gethonis", False, "http://46.202.141.49:8000")
-			async with inter.channel.typing():
+			async with ctx.channel.typing():
 				response = await asyncio.to_thread(bot.get_message, message)
 			await ctx.send(response)
 		except Exception as e:
