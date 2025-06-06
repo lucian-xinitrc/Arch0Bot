@@ -39,4 +39,5 @@ jobs:
             git pull
             docker stop arch0-bot || true
             docker rm arch0-bot || true
-            docker build -t arch0 .
+            docker build -t arch0
+            docker run -d --restart unless-stopped --name arch0-bot arch0
