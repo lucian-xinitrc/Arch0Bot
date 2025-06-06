@@ -13,6 +13,10 @@ class ShowingCommands():
 	async def help(inter, ctx):
 		await ctx.response.send_message("Hi")
 
+	@prompt.slash_command(description="Deploy Test")
+	async def deploytest(inter, ctx):
+		await ctx.response.send_message("The deployment was done!")
+
 	@prompt.slash_command(description="A random Joke")
 	async def joke(inter, ctx):
 		await ctx.response.send_message(requests.get(config.Config().jokes_api).json()['value'])
