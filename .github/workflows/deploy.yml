@@ -24,20 +24,3 @@ jobs:
             docker rm arch0-bot || true
             docker build -t arch0 .
             docker run -d --restart unless-stopped --name arch0-bot arch0
-      - name: Recovery: force checkout and retry
-        if: failure()
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          port: 22
-          script: |
-            cd /home/lucian/Arch0
-            git reset --hard HEAD
-            git clean -fd
-            git pull
-            docker stop arch0-bot || true
-            docker rm arch0-bot || true
-            docker build -t arch0 .
-            docker run -d --restart unless-stopped --name arch0-bot arch0
