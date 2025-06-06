@@ -20,7 +20,7 @@ jobs:
           script: |
             cd /home/lucian/Arch0
             git pull
-            docker stop arch0-bot || true
-            docker rm arch0-bot || true
-            docker build -t arch0 .
-            docker run -d --restart unless-stopped --name arch0-bot arch0
+            sudo docker stop arch0-bot || true
+            sudo docker rm arch0-bot || true
+            sudo docker build -t arch0 .
+            sudo docker run -d --restart unless-stopped --name arch0-bot arch0
