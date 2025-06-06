@@ -18,7 +18,28 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: 22
           script: |
+            set -e
             cd /home/lucian/Arch0
+            git pull
+            sudo docker stop arch0-bot || true
+            sudo docker rm arch0-bot || true
+            sudo ocker build -t arch0 .
+            sudo docker run -d --restart unless-stopped --name arch0-bot arch0
+
+      - name: Recovery: force checkout and retry
+        if: failure()
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          script: |
+            set -e
+            echo "Running recovery step after deploy failure..."
+            cd /home/lucian/Arch0
+            git reset --hard HEAD
+            git clean -fd
             git pull
             sudo docker stop arch0-bot || true
             sudo docker rm arch0-bot || true
