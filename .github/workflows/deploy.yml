@@ -41,8 +41,3 @@ jobs:
             docker stop arch0-bot || true
             docker rm arch0-bot || true
             docker build -t arch0 .
-<<<<<<< HEAD
-            docker run -d --restart unless-stopped --name arch0-bot arch0
-=======
-            docker run -d --restart unless-stopped --name arch0-bot arch0
->>>>>>> 9f05282c572e05bbffa8daac65e24ee3b939e2b5
