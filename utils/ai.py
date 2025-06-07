@@ -27,7 +27,7 @@ class ArtificialIntelligence():
 			    	stream=False
 				)
 				messages.append(response.choices[0].message)
-				await message.reply(response)
+				await message.reply(response.choices[0].message.content)
 
 	@prompt.slash_command(description="Gethonis")
 	async def geth(inter, ctx, message):
