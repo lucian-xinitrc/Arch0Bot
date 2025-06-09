@@ -2,7 +2,7 @@ import disnake
 import openai
 import requests
 import asyncio
-from . import gethonis
+import gethonis
 from . import config
 from openai import OpenAI
 from disnake.ext import commands
