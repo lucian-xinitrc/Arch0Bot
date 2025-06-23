@@ -31,12 +31,15 @@ class ArtificialIntelligence():
 
 	@prompt.slash_command(description="Gethonis")
 	async def geth(inter, ctx, message):
-		await ctx.response.defer()
-		msg = await ctx.followup.send("Please Wait a little...")
-		bot = gethonis.Gethonis("geth-EXDMlL79aV8W9trxndaZtg", "gethonis", False, "https://api.gethonis.com")
-		async with ctx.channel.typing():
-			response = await asyncio.to_thread(bot.get_message, message)
-			await msg.edit(content=response)
+		try
+			await ctx.response.defer()
+			msg = await ctx.followup.send("Please Wait a little...")
+			bot = gethonis.Gethonis("geth-Ecuw2g7oy9FIlN3RZMAOxw", "gethonis", False, "https://api.gethonis.com")
+			async with ctx.channel.typing():
+				response = await asyncio.to_thread(bot.get_message, message)
+				await msg.edit(content=response)
+		except:
+			await msg.edit("Your token expired.")
 
 	@prompt.slash_command(description="Image Generator")
 	async def image(inter, ctx, arg):
