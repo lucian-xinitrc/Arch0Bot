@@ -31,7 +31,7 @@ class ArtificialIntelligence():
 
 	@prompt.slash_command(description="Gethonis")
 	async def geth(inter, ctx, message):
-		try
+		try:
 			await ctx.response.defer()
 			msg = await ctx.followup.send("Please Wait a little...")
 			bot = gethonis.Gethonis("geth-Ecuw2g7oy9FIlN3RZMAOxw", "gethonis", False, "https://api.gethonis.com")
