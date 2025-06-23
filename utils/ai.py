@@ -33,7 +33,7 @@ class ArtificialIntelligence():
 	async def geth(inter, ctx, message):
 		await ctx.response.defer()
 		msg = await ctx.followup.send("Please Wait a little...")
-		bot = gethonis.Gethonis("geth-4c3d5a1630c4febd3d02263b526c223fb2d7c82e", "gethonis", False, "http://46.202.141.49:8000")
+		bot = gethonis.Gethonis("geth-EXDMlL79aV8W9trxndaZtg", "gethonis", False, "https://api.gethonis.com")
 		async with ctx.channel.typing():
 			response = await asyncio.to_thread(bot.get_message, message)
 			await msg.edit(content=response)
