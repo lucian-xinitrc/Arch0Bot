@@ -2,7 +2,7 @@ import disnake
 import openai
 import requests
 import asyncio
-import gethonis
+import gethonis as geth
 from . import config
 from openai import OpenAI
 from disnake.ext import commands
@@ -34,7 +34,8 @@ class ArtificialIntelligence():
 		try:
 			await ctx.response.defer()
 			msg = await ctx.followup.send("Please Wait a little...")
-			bot = gethonis.Gethonis("geth-Ecuw2g7oy9FIlN3RZMAOxw", "gethonis", False, "https://api.gethonis.com")
+			bot = geth.Gethonis("geth-Ecuw2g7oy9FIlN3RZMAOxw", "https://api.gethonis.com/")
+			bot.set_message("gethonis", False)
 			async with ctx.channel.typing():
 				response = await asyncio.to_thread(bot.get_message, message)
 				await msg.edit(content=response)
