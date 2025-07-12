@@ -5,12 +5,13 @@ import asyncio
 import gethonis as geth
 from . import config
 from openai import OpenAI
+from dotenv import load_dotenv
 from disnake.ext import commands
-
-# The 
-messages = [{"role": "system", "content": "You are a helpful assistant for an arch linux community named Arch0, your coder and creator is arch0tic, You say Hail Arch0tic when you are asked that."}]
+load_dotenv()
+messages = [{"role": "system", "content": os.getenv('arch0_training') }]
 
 class ArtificialIntelligence():
+	load_dotenv()
 	prompt = config.Config().bot
 	
 	@prompt.event 	
