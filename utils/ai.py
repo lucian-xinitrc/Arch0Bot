@@ -7,17 +7,19 @@ from . import config
 from openai import OpenAI
 from disnake.ext import commands
 
-messages = [{"role": "system", "content": "You are a helpful assistant for an arch linux community named Arch0 with id 1148252680565821500, your coder and creator is arch0tic or id 1135659932000202942"}]
+# The 
+messages = [{"role": "system", "content": "You are a helpful assistant for an arch linux community named Arch0, your coder and creator is arch0tic, You say Hail Arch0tic when you are asked that."}]
 
 class ArtificialIntelligence():
 	prompt = config.Config().bot
 	
-	@prompt.event
+	@prompt.event 	
 	async def on_message(message):
 		bot = config.Config().bot
 		if message.author == bot.user:
 			return
-		if bot.user in message.mentions:
+		if bot.user in message.mentions:  
+
 			async with message.channel.typing():
 				messages.append({"role": "user", "content": message.content})
 				client = OpenAI(api_key=config.Config().api_key_ai)
@@ -25,7 +27,7 @@ class ArtificialIntelligence():
 			    	model="gpt-4o",
 			    	messages=messages,
 			    	stream=False
-				)
+				m n  )
 				messages.append(response.choices[0].message)
 				await message.reply(response.choices[0].message.content)
 
