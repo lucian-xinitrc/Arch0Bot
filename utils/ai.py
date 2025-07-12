@@ -23,7 +23,9 @@ class ArtificialIntelligence():
 		if bot.user in message.mentions:  
 
 			async with message.channel.typing():
-				messages.append({"role": "system", "content": os.getenv('arch0_training')})
+				for msg in messages:
+				    if msg["role"] == "system":
+				        msg["content"] = os.getenv('arch0_training')
 				messages.append({"role": "user", "content": message.content})
 				client = OpenAI(api_key=config.Config().api_key_ai)
 				response = client.chat.completions.create(
