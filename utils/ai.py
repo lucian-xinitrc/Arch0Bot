@@ -27,7 +27,7 @@ class ArtificialIntelligence():
 			    	model="gpt-4o",
 			    	messages=messages,
 			    	stream=False
-				m n  )
+				)
 				messages.append(response.choices[0].message)
 				await message.reply(response.choices[0].message.content)
 
