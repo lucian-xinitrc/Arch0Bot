@@ -1,3 +1,4 @@
+import os
 import disnake
 import openai
 import requests
