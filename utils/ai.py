@@ -49,18 +49,11 @@ class ArtificialIntelligence():
 						    color=disnake.Color.gold()
 						)
 						embed.set_footer(text=footer_text)
-						if title[0] != '#':
-							output = textwrap.dedent(f"""
-							# {title}
-							{joined_paragraphs}
-							{footer_text}
-							""")
-						else:
-							output = textwrap.dedent(f"""
-							{title}\n
-							{joined_paragraphs}\n
-							{footer_text}
-							""")
+						output = textwrap.dedent(f"""
+						# {title}
+						{joined_paragraphs}
+						{footer_text}
+						""")
 						await channel.send(output)
 					else:
 						await channel.send(result)
