@@ -24,7 +24,7 @@ class ArtificialIntelligence():
 		if channel:
 			getho = geth.Gethonis("geth-Ecuw2g7oy9FIlN3RZMAOxw", "https://api.gethonis.com/")
 			getho.set_listener(str(bot.user.id))
-			await message.send(bot.get_postaslistener())
+			await channel.send(bot.get_postaslistener())
 
 	@prompt.event 	
 	async def on_message(message):
