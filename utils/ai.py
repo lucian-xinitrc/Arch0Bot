@@ -16,11 +16,10 @@ class ArtificialIntelligence():
 	load_dotenv()
 	prompt = config.Config().bot
 
-	@prompt.event 	
-	async def on_message(message):
+	@prompt.event
+	async def on_ready():
 		bot = config.Config().bot
-		if message.author == bot.user:
-			return
+		print("Arch0 is running.")
 		if True:
 			channel_id = 1215366952562729080
 			channel = bot.get_channel(channel_id)
@@ -45,6 +44,11 @@ class ArtificialIntelligence():
 					await channel.send(embed=embed)
 				else:
 					await channel.send(result)
+	@prompt.event 	
+	async def on_message(message):
+		bot = config.Config().bot
+		if message.author == bot.user:
+			return
 		if bot.user in message.mentions:  
 			async with message.channel.typing():
 				messages.append({"role": "user", "content": message.content})
