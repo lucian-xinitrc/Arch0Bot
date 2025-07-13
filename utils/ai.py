@@ -47,7 +47,7 @@ class ArtificialIntelligence():
 					)
 					embed.set_footer(text=footer_text)
 					channel.send(embed=embed)
-					await channel.sent(f"""
+					await channel.send(f"""
 						{Title}
 						{paragraphs}
 						{footer_text}
