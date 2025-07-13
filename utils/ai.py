@@ -4,6 +4,7 @@ import disnake
 import openai
 import requests
 import asyncio
+import textwrap
 import gethonis as geth
 from . import config
 from openai import OpenAI
@@ -48,17 +49,17 @@ class ArtificialIntelligence():
 					)
 					embed.set_footer(text=footer_text)
 					if title[0] != '#':
-						output = f"""
+						output = textwrap.dedent(f"""
 						#{title}#
 						{"\n\n".join(paragraphs)}
 						{footer_text}
-						"""
+						""")
 					else:
-						output = f"""
+						output = textwrap.dedent(f"""
 						{title}
 						{"\n\n".join(paragraphs)}
 						{footer_text}
-						"""
+						""")
 					await channel.send(output)
 				else:
 					await channel.send(result)
