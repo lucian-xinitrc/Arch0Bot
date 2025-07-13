@@ -1,10 +1,8 @@
 import disnake
-import asyncio
 from . import config
 from . import ai
 from . import moderation as md
 from . import showingcommands as sc
-from disnake.ext import commands, tasks
 
 class DiscordBot():
 	c = config.Config()
@@ -15,11 +13,11 @@ class DiscordBot():
 		sc.ShowingCommands()
 		ai.ArtificialIntelligence()
 		md.ServerInfo()
-    
+		
 	def config_bot():
 		return self.bot
 
 	@sc.ShowingCommands().prompt.event
-	async def on_ready(self):
+	async def on_ready():
 		activity = disnake.Game(name="Arch BTW!")
 		await sc.ShowingCommands().prompt.change_presence(status=disnake.Status.idle, activity=activity)
