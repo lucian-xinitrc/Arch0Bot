@@ -17,8 +17,8 @@ class DiscordBot():
 		self.postListener.start()
 		
 	@tasks.loop(seconds=2)
-    async def postListener(self):
-        ai.listenerGeth()
+	async def postListener(self):
+		ai.listenerGeth()
     
 	def config_bot():
 		return self.bot
