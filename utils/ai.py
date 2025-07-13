@@ -16,8 +16,7 @@ class ArtificialIntelligence():
 	load_dotenv()
 	prompt = config.Config().bot
 
-	@tasks.loop(seconds=10)
-	async def on_ready():
+	async def listenerGeth():
 		bot = config.Config().bot
 		print("Arch0 is running.")
 		if True:
@@ -96,3 +95,15 @@ class ArtificialIntelligence():
 			await ctx.send(embed= embed)
 		except:
 			await ctx.send(requests.get(config.Config().jokes_api).json()['value'])
+
+aiScan = ArtificialIntelligence()
+@tasks.loop(seconds=10)
+async def gethonisScanning():
+    await aiScan.listenerGeth()
+
+@gethonisScanning.before_loop
+async def wait_for_bot():
+    await aiScan.bot.wait_until_ready()
+    print("✅ Arch0 is online and scanning.")
+
+gethonisScanning.start()
