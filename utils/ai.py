@@ -46,7 +46,12 @@ class ArtificialIntelligence():
 					    color=disnake.Color.gold()
 					)
 					embed.set_footer(text=footer_text)
-					await channel.send(embed=embed)
+					channel.send(embed=embed)
+					await channel.sent(f"""
+						{Title}
+						{paragraphs}
+						{footer_text}
+						""")
 				else:
 					await channel.send(result)
 		if bot.user in message.mentions:  
