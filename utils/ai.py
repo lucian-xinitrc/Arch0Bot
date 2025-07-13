@@ -12,6 +12,15 @@ from disnake.ext import commands, tasks
 load_dotenv()
 messages = [{"role": "system", "content": os.getenv('arch0_training') }]
 
+class Listeners(commands.Cog):
+	def __init__(self, bot):
+		self.bot = bot
+		self.postListener.start()
+
+	@tasks.loop(seconds=10)
+	async def postListener(self):
+		ArtificialIntelligence.listenerGeth()
+
 class ArtificialIntelligence():
 	load_dotenv()
 	prompt = config.Config().bot
@@ -95,15 +104,3 @@ class ArtificialIntelligence():
 			await ctx.send(embed= embed)
 		except:
 			await ctx.send(requests.get(config.Config().jokes_api).json()['value'])
-
-aiScan = ArtificialIntelligence()
-@tasks.loop(seconds=10)
-async def gethonisScanning():
-    await aiScan.listenerGeth()
-
-@gethonisScanning.before_loop
-async def wait_for_bot():
-    await aiScan.bot.wait_until_ready()
-    print("✅ Arch0 is online and scanning.")
-
-gethonisScanning.start()

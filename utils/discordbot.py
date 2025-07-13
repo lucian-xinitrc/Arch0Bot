@@ -13,7 +13,8 @@ class DiscordBot():
 		sc.ShowingCommands()
 		ai.ArtificialIntelligence()
 		md.ServerInfo()
-		
+		self.c.bot.add_cog(Listeners(bot))
+
 	def config_bot():
 		return self.bot
 
