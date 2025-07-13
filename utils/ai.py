@@ -20,13 +20,14 @@ class ArtificialIntelligence():
 		bot = config.Config().bot
 		if message.author == bot.user:
 			return
-		if True:
+		if "aratapostare" in message.content.lower():
 			channel_id = 1215366952562729080
 			channel = bot.get_channel(channel)
 			if channel:
 				getho = geth.Gethonis("geth-Ecuw2g7oy9FIlN3RZMAOxw", "https://api.gethonis.com/")
 				getho.set_listener(str(bot.user.id))
-				await channel.send(bot.get_postaslistener())
+				result = getho.get_postaslistener()
+				await channel.send(result)
 		if bot.user in message.mentions:  
 			async with message.channel.typing():
 				messages.append({"role": "user", "content": message.content})
