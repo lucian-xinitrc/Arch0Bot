@@ -14,23 +14,19 @@ messages = [{"role": "system", "content": os.getenv('arch0_training') }]
 class ArtificialIntelligence():
 	load_dotenv()
 	prompt = config.Config().bot
-	
-	@prompt.event
-	async def on_ready():
-		bot = config.Config().bot
-		print("Arch0 is running")
-		channel_id = 1215366952562729080
-		channel = bot.get_channel(channel)
-		if channel:
-			getho = geth.Gethonis("geth-Ecuw2g7oy9FIlN3RZMAOxw", "https://api.gethonis.com/")
-			getho.set_listener(str(bot.user.id))
-			await channel.send(bot.get_postaslistener())
 
 	@prompt.event 	
 	async def on_message(message):
 		bot = config.Config().bot
 		if message.author == bot.user:
 			return
+		if True:
+			channel_id = 1215366952562729080
+			channel = bot.get_channel(channel)
+			if channel:
+				getho = geth.Gethonis("geth-Ecuw2g7oy9FIlN3RZMAOxw", "https://api.gethonis.com/")
+				getho.set_listener(str(bot.user.id))
+				await channel.send(bot.get_postaslistener())
 		if bot.user in message.mentions:  
 			async with message.channel.typing():
 				messages.append({"role": "user", "content": message.content})
