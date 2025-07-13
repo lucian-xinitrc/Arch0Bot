@@ -33,37 +33,39 @@ class ArtificialIntelligence():
 				getho = geth.Gethonis("geth-Ecuw2g7oy9FIlN3RZMAOxw", "https://api.gethonis.com/")
 				getho.set_listener(str(bot.user.id))
 				result = getho.get_postaslistener()
+				try
+					raw_result = result[0]
+					parsed_data = json.loads(raw_result)
+					if parsed_data['Post']:
+						post = parsed_data['Post']
+						title = post.get("Title", "Untitled Post")
+						paragraphs = post.get("paragraphs", [])
+						footer_text = post.get("Footer", "")
+						joined_paragraphs = "\n\n".join(paragraphs)
 
-				raw_result = result[0]
-				parsed_data = json.loads(raw_result)
-				if parsed_data['Post']:
-					post = parsed_data['Post']
-					title = post.get("Title", "Untitled Post")
-					paragraphs = post.get("paragraphs", [])
-					footer_text = post.get("Footer", "")
-					joined_paragraphs = "\n\n".join(paragraphs)
-
-					embed = disnake.Embed(
-					    title=title,
-					    description="\n\n".join(paragraphs),
-					    color=disnake.Color.gold()
-					)
-					embed.set_footer(text=footer_text)
-					if title[0] != '#':
-						output = textwrap.dedent(f"""
-						#{title}#
-						{joined_paragraphs}
-						{footer_text}
-						""")
+						embed = disnake.Embed(
+						    title=title,
+						    description="\n\n".join(paragraphs),
+						    color=disnake.Color.gold()
+						)
+						embed.set_footer(text=footer_text)
+						if title[0] != '#':
+							output = textwrap.dedent(f"""
+							#{title}#
+							{joined_paragraphs}
+							{footer_text}
+							""")
+						else:
+							output = textwrap.dedent(f"""
+							{title}
+							{joined_paragraphs}
+							{footer_text}
+							""")
+						await channel.send(output)
 					else:
-						output = textwrap.dedent(f"""
-						{title}
-						{joined_paragraphs}
-						{footer_text}
-						""")
-					await channel.send(output)
-				else:
-					await channel.send(result)
+						await channel.send(result)
+				except:
+					print("Looking for post")
 		if bot.user in message.mentions:  
 			async with message.channel.typing():
 				messages.append({"role": "user", "content": message.content})
