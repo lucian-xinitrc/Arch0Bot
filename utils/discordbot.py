@@ -15,16 +15,11 @@ class DiscordBot():
 		sc.ShowingCommands()
 		ai.ArtificialIntelligence()
 		md.ServerInfo()
-		
-	def postListener(self):
-		while True:
-			ai.ArtificialIntelligence().listenerGeth()
     
 	def config_bot():
 		return self.bot
 
 	@sc.ShowingCommands().prompt.event
-	async def on_ready():
+	async def on_ready(self):
 		activity = disnake.Game(name="Arch BTW!")
-		asyncio.to_thread(postListener())
 		await sc.ShowingCommands().prompt.change_presence(status=disnake.Status.idle, activity=activity)
