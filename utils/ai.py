@@ -47,7 +47,7 @@ class ArtificialIntelligence():
 					    color=disnake.Color.gold()
 					)
 					embed.set_footer(text=footer_text)
-					if title[0] != '#'
+					if title[0] != '#':
 						output = f"""
 						#{title}#
 						{"\n\n".join(paragraphs)}
