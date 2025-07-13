@@ -22,7 +22,7 @@ class ArtificialIntelligence():
 			return
 		if "aratapostare" in message.content.lower():
 			channel_id = 1215366952562729080
-			channel = bot.get_channel(channel)
+			channel = bot.get_channel(channel_id)
 			if channel:
 				getho = geth.Gethonis("geth-Ecuw2g7oy9FIlN3RZMAOxw", "https://api.gethonis.com/")
 				getho.set_listener(str(bot.user.id))
