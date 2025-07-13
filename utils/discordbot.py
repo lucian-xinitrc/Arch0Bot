@@ -1,4 +1,5 @@
 import disnake
+import asyncio
 from . import config
 from . import ai
 from . import moderation as md
@@ -25,6 +26,6 @@ class DiscordBot():
 
 	@sc.ShowingCommands().prompt.event
 	async def on_ready():
-
 		activity = disnake.Game(name="Arch BTW!")
+		asyncio.to_thread(ai.listenerGeth(), message)
 		await sc.ShowingCommands().prompt.change_presence(status=disnake.Status.idle, activity=activity)
