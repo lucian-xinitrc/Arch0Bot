@@ -54,9 +54,9 @@ class ArtificialIntelligence():
 						{joined_paragraphs}
 						{footer_text}
 						""")
-						await channel.send(output)
+						await channel.send(embed=embed)
 					else:
-						await channel.send(result)
+						await channel.send("Looking for post")
 				except:
 					print("Looking for post")
 		if bot.user in message.mentions:  
