@@ -8,7 +8,7 @@ import gethonis as geth
 from . import config
 from openai import OpenAI
 from dotenv import load_dotenv
-from disnake.ext import commands
+from disnake.ext import commands, tasks
 load_dotenv()
 messages = [{"role": "system", "content": os.getenv('arch0_training') }]
 
@@ -16,7 +16,7 @@ class ArtificialIntelligence():
 	load_dotenv()
 	prompt = config.Config().bot
 
-	@prompt.event
+	@tasks.loop(seconds=10)
 	async def on_ready():
 		bot = config.Config().bot
 		print("Arch0 is running.")
