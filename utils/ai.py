@@ -15,13 +15,23 @@ class ArtificialIntelligence():
 	load_dotenv()
 	prompt = config.Config().bot
 	
+	@prompt.event
+	async def on_ready():
+		bot = config.Config().bot
+		print("Arch0 is running")
+
+		channel = bot.get_channel(os.getenv('channel_to_send'))
+		if channel:
+			getho = geth.Gethonis("geth-Ecuw2g7oy9FIlN3RZMAOxw", "https://api.gethonis.com/")
+			getho.set_listener(str(bot.user.id))
+			await message.send(bot.get_postaslistener())
+
 	@prompt.event 	
 	async def on_message(message):
 		bot = config.Config().bot
 		if message.author == bot.user:
 			return
 		if bot.user in message.mentions:  
-
 			async with message.channel.typing():
 				messages.append({"role": "user", "content": message.content})
 				client = OpenAI(api_key=config.Config().api_key_ai)
