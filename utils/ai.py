@@ -19,8 +19,8 @@ class ArtificialIntelligence():
 	async def on_ready():
 		bot = config.Config().bot
 		print("Arch0 is running")
-
-		channel = bot.get_channel(os.getenv('channel_to_send'))
+		channel_id = 1215366952562729080
+		channel = bot.get_channel(channel)
 		if channel:
 			getho = geth.Gethonis("geth-Ecuw2g7oy9FIlN3RZMAOxw", "https://api.gethonis.com/")
 			getho.set_listener(str(bot.user.id))
