@@ -33,7 +33,7 @@ class ArtificialIntelligence():
 				getho = geth.Gethonis("geth-Ecuw2g7oy9FIlN3RZMAOxw", "https://api.gethonis.com/")
 				getho.set_listener(str(bot.user.id))
 				result = getho.get_postaslistener()
-				try
+				try:
 					raw_result = result[0]
 					parsed_data = json.loads(raw_result)
 					if parsed_data['Post']:
