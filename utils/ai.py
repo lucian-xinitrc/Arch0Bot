@@ -57,8 +57,8 @@ class ArtificialIntelligence():
 							""")
 						else:
 							output = textwrap.dedent(f"""
-							{title}
-							{joined_paragraphs}
+							{title}\n
+							{joined_paragraphs}\n
 							{footer_text}
 							""")
 						await channel.send(output)
