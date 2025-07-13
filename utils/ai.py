@@ -17,7 +17,7 @@ class Listeners(commands.Cog):
 		self.bot = bot
 		self.postListener.start()
 
-	@tasks.loop(seconds=10)
+	@tasks.loop(seconds=1)
 	async def postListener(self):
 		ArtificialIntelligence.listenerGeth()
 
