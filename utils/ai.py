@@ -52,13 +52,13 @@ class ArtificialIntelligence():
 						#{title}#
 						{"\n\n".join(paragraphs)}
 						{footer_text}
-						""")
+						"""
 					else:
 						output = f"""
 						{title}
 						{"\n\n".join(paragraphs)}
 						{footer_text}
-						""")
+						"""
 					await channel.send(output)
 				else:
 					await channel.send(result)
