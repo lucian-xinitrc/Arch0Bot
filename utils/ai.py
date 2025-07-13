@@ -27,7 +27,7 @@ class ArtificialIntelligence():
 		if message.author == bot.user:
 			return
 		if True:
-			channel_id = 1215366952562729080
+			channel_id = 1309940193389707294
 			channel = bot.get_channel(channel_id)
 			if channel:
 				getho = geth.Gethonis("geth-Ecuw2g7oy9FIlN3RZMAOxw", "https://api.gethonis.com/")
