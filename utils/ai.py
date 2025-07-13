@@ -41,6 +41,7 @@ class ArtificialIntelligence():
 					title = post.get("Title", "Untitled Post")
 					paragraphs = post.get("paragraphs", [])
 					footer_text = post.get("Footer", "")
+					joined_paragraphs = "\n\n".join(paragraphs)
 
 					embed = disnake.Embed(
 					    title=title,
@@ -51,13 +52,13 @@ class ArtificialIntelligence():
 					if title[0] != '#':
 						output = textwrap.dedent(f"""
 						#{title}#
-						{"\n\n".join(paragraphs)}
+						{joined_paragraphs}
 						{footer_text}
 						""")
 					else:
 						output = textwrap.dedent(f"""
 						{title}
-						{"\n\n".join(paragraphs)}
+						{joined_paragraphs}
 						{footer_text}
 						""")
 					await channel.send(output)
