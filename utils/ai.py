@@ -32,7 +32,7 @@ class ArtificialIntelligence():
 				getho = geth.Gethonis("geth-Ecuw2g7oy9FIlN3RZMAOxw", "https://api.gethonis.com/")
 				getho.set_listener(str(bot.user.id))
 				result = getho.get_postaslistener()
-				
+
 				raw_result = result[0]
 				parsed_data = json.loads(raw_result)
 				if parsed_data['Post']:
@@ -48,11 +48,19 @@ class ArtificialIntelligence():
 					)
 					embed.set_footer(text=footer_text)
 					channel.send(embed=embed)
-					await channel.send(f"""
-						{title}
-						{paragraphs}
+					if title[0] != '#'
+						output = f"""
+						#{title}#
+						{"\n\n".join(paragraphs)}
 						{footer_text}
 						""")
+					else:
+						output = f"""
+						{title}
+						{"\n\n".join(paragraphs)}
+						{footer_text}
+						""")
+					await channel.send(output)
 				else:
 					await channel.send(result)
 		if bot.user in message.mentions:  
