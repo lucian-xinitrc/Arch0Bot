@@ -30,7 +30,7 @@ class ArtificialIntelligence():
 				result = getho.get_postaslistener()
 				raw_result = result[0]
 				parsed_data = json.loads(raw_result)
-				if parsed_date['Post']:
+				if parsed_data['Post']:
 					post = parsed_data['Post']
 					title = post.get("Title", "Untitled Post")
 					paragraphs = post.get("paragraphs", [])
