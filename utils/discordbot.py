@@ -3,19 +3,23 @@ from . import config
 from . import ai
 from . import moderation as md
 from . import showingcommands as sc
+from disnake.ext import commands, tasks
 
 class DiscordBot():
 	c = config.Config()
 	token = c.discord_token
 
 	def __init__(self):
-		self.c.bot.add_cog(ai.Listeners(self.c.bot))
 		self.c.bot.run(self.token)
 		sc.ShowingCommands()
 		ai.ArtificialIntelligence()
 		md.ServerInfo()
+		self.postListener.start()
 		
-
+	@tasks.loop(seconds=2)
+    async def postListener(self):
+        ai.listenerGeth()
+    
 	def config_bot():
 		return self.bot
 

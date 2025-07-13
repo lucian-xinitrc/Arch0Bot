@@ -12,15 +12,6 @@ from disnake.ext import commands, tasks
 load_dotenv()
 messages = [{"role": "system", "content": os.getenv('arch0_training') }]
 
-class Listeners(commands.Cog):
-	def __init__(self, bot):
-		self.bot = bot
-		self.postListener.start()
-
-	@tasks.loop(seconds=1)
-	async def postListener(self):
-		ArtificialIntelligence.listenerGeth()
-
 class ArtificialIntelligence():
 	load_dotenv()
 	prompt = config.Config().bot
