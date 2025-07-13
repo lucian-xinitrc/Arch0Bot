@@ -47,7 +47,6 @@ class ArtificialIntelligence():
 					    color=disnake.Color.gold()
 					)
 					embed.set_footer(text=footer_text)
-					channel.send(embed=embed)
 					if title[0] != '#'
 						output = f"""
 						#{title}#
