@@ -20,14 +20,30 @@ class ArtificialIntelligence():
 		bot = config.Config().bot
 		if message.author == bot.user:
 			return
-		if "aratapostare" in message.content.lower():
+		if True:
 			channel_id = 1215366952562729080
 			channel = bot.get_channel(channel_id)
 			if channel:
 				getho = geth.Gethonis("geth-Ecuw2g7oy9FIlN3RZMAOxw", "https://api.gethonis.com/")
 				getho.set_listener(str(bot.user.id))
 				result = getho.get_postaslistener()
-				await channel.send(result)
+				raw_result = result[0]
+				parsed_data = json.loads(raw_result)
+				if parsed_date['Post']:
+					post = parsed_data['Post']
+					title = post.get("Title", "Untitled Post")
+					paragraphs = post.get("paragraphs", [])
+					footer_text = post.get("Footer", "")
+
+					embed = disnake.Embed(
+					    title=title,
+					    description="\n\n".join(paragraphs),
+					    color=disnake.Color.gold()
+					)
+					embed.set_footer(text=footer_text)
+					await channel.send(embed=embed)
+				else:
+					await channel.send(result)
 		if bot.user in message.mentions:  
 			async with message.channel.typing():
 				messages.append({"role": "user", "content": message.content})
