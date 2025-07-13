@@ -9,7 +9,7 @@ class DiscordBot():
 	token = c.discord_token
 
 	def __init__(self):
-		self.c.bot.add_cog(ArtificialIntelligence.Listeners(bot))
+		self.c.bot.add_cog(ai.Listeners(bot))
 		self.c.bot.run(self.token)
 		sc.ShowingCommands()
 		ai.ArtificialIntelligence()
