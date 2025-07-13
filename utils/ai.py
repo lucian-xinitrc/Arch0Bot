@@ -51,7 +51,7 @@ class ArtificialIntelligence():
 						embed.set_footer(text=footer_text)
 						if title[0] != '#':
 							output = textwrap.dedent(f"""
-							#{title}#
+							# {title}
 							{joined_paragraphs}
 							{footer_text}
 							""")
