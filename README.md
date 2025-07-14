@@ -125,6 +125,6 @@ For API Documentation see [Gethonis API Repo](https://github.com/lucian-xinitrc/
 ## 📫 13. Contact
 Name: Lucian-Florin Cusmir
 
-Github: github.com/lucian-xinitrc
+Github: [github.com/lucian-xinitrc](https://github.com/lucian-xinitrc)
 
 Email: cusmirlucian@gmail.com
