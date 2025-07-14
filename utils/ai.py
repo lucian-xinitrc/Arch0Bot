@@ -2,10 +2,15 @@ import os, json, disnake, openai, requests, asyncio, textwrap
 import gethonis as geth
 from . import config
 from openai import OpenAI
-from dotenv import load_dotenv
+from dotenv import load_dotenv, dotenv_values
 from disnake.ext import commands, tasks
 load_dotenv()
 messages = [{"role": "system", "content": os.getenv('arch0_training') }]
+
+def reload_env(path='.env'):
+    env_dict = dotenv_values(path)
+    for k, v in env_dict.items():
+        os.environ[k] = v
 
 class ArtificialIntelligence():
 	load_dotenv()
@@ -22,6 +27,7 @@ class ArtificialIntelligence():
 			return
 		if True:
 			load_dotenv('.env')
+			reload_env('.env')
 			channel_id = int(os.getenv('channel_posts'))
 			channel = bot.get_channel(channel_id)
 			if channel:
