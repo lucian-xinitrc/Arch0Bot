@@ -58,15 +58,15 @@
 ## 📂 5. Project Structure
 ```
 Arch0/
-├── tests/						# Unit and integration tests
+├── tests/                        # Unit and integration tests
 ├── utils/
-│   ├── ai.py                 	# Artificial Intelligence based user interaction and commands
-│   ├── config.py 			  	# Were most most of key data is loaded from .env such as tokens and datas
-│   ├── discordbot.py 			# Where all the classes are imported and connection initialised
-│   ├── moderation.py  			# For moderation commands and operations
-│   ├── showingcommands.py  	# Simple showing commands with not very much user interaction
-├── Dockerfile  				# Config file for docker container
-├── bot.py               	 	# Main startup script which is linked with discordbot
+│   ├── ai.py                     # Artificial Intelligence based user interaction and commands
+│   ├── config.py                 # Were most most of key data is loaded from .env such as tokens and datas
+│   ├── discordbot.py             # Where all the classes are imported and connection initialised
+│   ├── moderation.py             # For moderation commands and operations
+│   ├── showingcommands.py        # Simple showing commands with not very much user interaction
+├── Dockerfile                    # Config file for docker container
+├── bot.py                        # Main startup script which is linked with discordbot
 ├── README.md
 └──  requirements.txt
 ```
@@ -84,7 +84,7 @@ Prerequisites:
 * Create `.env` with required tokens
 * Run with `python bot.py`
 
-**If you want to run him with Docker:**
+**If you want to run it with Docker:**
 * Clone the repo
 * Install Docker
 * ```sudo docker build -t arch0 .```
