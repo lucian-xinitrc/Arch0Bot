@@ -47,8 +47,8 @@
 ## 🧰 4. Tech Stack
 | Layer |Technologies Used |
 | -------- | -------- |
-|Bot Engine | Disnake|
-|API | Gethonis API|
+|Bot Engine | [Disnake](https://docs.disnake.dev/) |
+|API | [Gethonis API Repo](https://github.com/lucian-xinitrc/|
 |AI Models | OpenAI GPT-4, Gethonis|
 |Hosting | Hetzner VPS (Linux Ubuntu)|
 |Auth | Bearer token via `.env`|
@@ -106,7 +106,7 @@ For API Documentation see [Gethonis API Repo](https://github.com/lucian-xinitrc/
 |Ram usage | ~150–200 MB |
 
 ## 🧠 10. Model Info
-* Language Model: GPT-4 via OpenAI API, Gethonis AI API
+* Language Model: GPT-4 via OpenAI API, [Gethonis API Repo](https://github.com/lucian-xinitrc/
 * Role: Helfpul, assertive assistant and mod
 * Prompt customisation via `arch0_training` in `.env`
 
@@ -125,5 +125,6 @@ For API Documentation see [Gethonis API Repo](https://github.com/lucian-xinitrc/
 Name: Lucian-Florin Cusmir
 
 Github: [github.com/lucian-xinitrc](https://github.com/lucian-xinitrc)
+Github: [/in/lucian-florin-cusmir-fullstackdev-](https://www.linkedin.com/in/lucian-florin-cusmir-fullstackdev/)
 
 Email: cusmirlucian@gmail.com
