@@ -45,8 +45,6 @@
 * Environment variable config (.env support)
 
 ## 🧰 4. Tech Stack
-
-
 | Layer |Technologies Used |
 | -------- | -------- |
 |Bot Engine | Disnake|
@@ -56,6 +54,7 @@
 |Auth | Bearer token via `.env`|
 |Deployment | Docker|
 |CI/CD | Github Actions|
+
 ## 📂 5. Project Structure
 ```
 Arch0/
@@ -100,13 +99,12 @@ Prerequisites:
 For API Documentation see [Gethonis API Repo](https://github.com/lucian-xinitrc/GethonisAIApi)
 
 ## 📈 9. Performance & Benchmarks
-
-
 | Metric | Value |
 | -------- | -------- |
 |Average latency | 60 ms|
 |Vps Uptime | 99.9% (systemd or Docker auto-restart)|
 |Ram usage | ~150–200 MB |
+
 ## 🧠 10. Model Info
 * Language Model: GPT-4 via OpenAI API, Gethonis AI API
 * Role: Helfpul, assertive assistant and mod
