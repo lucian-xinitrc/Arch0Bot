@@ -13,10 +13,11 @@
 9. [Performance & Benchmarks](#-9-performance--benchmarks)
 10. [Model Info](#-10-model-info)
 11. [Roadmap or Future Features](#-11-roadmap-or-future-features)
-12. [Contributing](#-%EF%B8%8F-12-contributing)
+12. [Contributing](#%EF%B8%8F-12-contributing)
 13. [Contact](#-13-contact)
 
 ## 📸 1. Live Demo / Screenshots / Video
+
 ![ Arch0Test ](.images/arch0Test.png)
 
 ## 🧠 2. Overview / Introduction
