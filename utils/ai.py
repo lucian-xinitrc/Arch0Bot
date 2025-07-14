@@ -1,10 +1,4 @@
-import os
-import json
-import disnake
-import openai
-import requests
-import asyncio
-import textwrap
+import os, json, disnake, openai, requests, asyncio, textwrap
 import gethonis as geth
 from . import config
 from openai import OpenAI
@@ -27,10 +21,11 @@ class ArtificialIntelligence():
 		if message.author == bot.user:
 			return
 		if True:
-			channel_id = 1309940193389707294
+			load_dotenv()
+			channel_id = os.getenv('channel_posts')
 			channel = bot.get_channel(channel_id)
 			if channel:
-				getho = geth.Gethonis("geth-Ecuw2g7oy9FIlN3RZMAOxw", "https://api.gethonis.com/")
+				getho = geth.Gethonis(os.getenv('token_gethonis'), os.getenv('baseurl_gethonis'))
 				getho.set_listener(str(bot.user.id))
 				result = getho.get_postaslistener()
 				try:
@@ -61,6 +56,8 @@ class ArtificialIntelligence():
 					print("Looking for post")
 		if bot.user in message.mentions:  
 			async with message.channel.typing():
+				load_dotenv()
+				messages[0]["content"] = os.getenv('arch0_training')
 				messages.append({"role": "user", "content": message.content})
 				client = OpenAI(api_key=config.Config().api_key_ai)
 				response = client.chat.completions.create(
