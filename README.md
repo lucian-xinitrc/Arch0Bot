@@ -1,5 +1,20 @@
 # 🚀 Arch0
 ### AI-powered Discord chatbot, moderator, and remote content broadcaster always watching, always learning.
+## 📚 Table of Contents
+
+1. [Screenshots / Diagram](#1-live-demo--screenshots--video)
+2. [Overview](#-2-overview--introduction)
+3. [Features](#-3-features)
+4. [Tech Stack](#-4-tech-stack)
+5. [Project Structure](#-5-project-structure)
+6. [Getting Started](#-6-getting-started)
+7. [Example Usage](#-7-example-usage)
+8. [API Documentation](#-8-api-documentation)
+9. [Performance & Benchmarks](#-9-performance--benchmarks)
+10. [Model Info](#-10-model-info)
+11. [Roadmap or Future Features](#-11-roadmap-or-future-features)
+12. [Contributing](#-%EF%B8%8F-12-contributing)
+13. [Contact](#-13-contact)
 
 ## 📸 1. Live Demo / Screenshots / Video
 ![ Arch0Test ](.images/arch0Test.png)
@@ -84,7 +99,7 @@ Prerequisites:
 ## 📄 8. API Documentation
 For API Documentation see [Gethonis API Repo](https://github.com/lucian-xinitrc/GethonisAIApi)
 
-## 📈 10. Performance & Benchmarks
+## 📈 9. Performance & Benchmarks
 
 
 | Metric | Value |
@@ -92,23 +107,23 @@ For API Documentation see [Gethonis API Repo](https://github.com/lucian-xinitrc/
 |Average latency | 60 ms|
 |Vps Uptime | 99.9% (systemd or Docker auto-restart)|
 |Ram usage | ~150–200 MB |
-## 🧠 11. Model Info
+## 🧠 10. Model Info
 * Language Model: GPT-4 via OpenAI API, Gethonis AI API
 * Role: Helfpul, assertive assistant and mod
 * Prompt customisation via `arch0_training` in `.env`
 
-## 💡 12. Roadmap or Future Features
+## 💡 11. Roadmap or Future Features
 * Logging system for moderation events
 * Memory for contextual chat
 * Monitoring (Prometheus + Grafana)
 
-## 🙋‍♂️ 13. Contributing
+## 🙋‍♂️ 12. Contributing
 * Fork the repository
 * Create a new branch
 * Add your change
 * Push and open a Pull Request
 
-## 📫 15. Contact
+## 📫 13. Contact
 Name: Lucian-Florin Cusmir
 
 Github: github.com/lucian-xinitrc
