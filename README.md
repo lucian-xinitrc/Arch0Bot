@@ -3,7 +3,7 @@
 
 ## 📚 Table of Contents
 
-1. [Screenshots / Diagram](#-1-live-demo--screenshots--video)
+1. [Screenshots / Diagram](#-1-screenshot)
 2. [Overview](#-2-overview--introduction)
 3. [Features](#-3-features)
 4. [Tech Stack](#-4-tech-stack)
@@ -17,7 +17,7 @@
 12. [Contributing](#%EF%B8%8F-12-contributing)
 13. [Contact](#-13-contact)
 
-## 📸 1. Live Demo / Screenshots / Video
+## 📸 1. Screenshot
 ![ Arch0Test ](.images/arch0TestScreenshot.png)
 
 ## 🧠 2. Overview / Introduction
