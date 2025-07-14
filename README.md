@@ -3,7 +3,7 @@
 
 ## 📚 Table of Contents
 
-1. [Screenshots / Diagram](#-1-screenshot)
+1. [Screenshot](#-1-screenshot)
 2. [Overview](#-2-overview--introduction)
 3. [Features](#-3-features)
 4. [Tech Stack](#-4-tech-stack)
