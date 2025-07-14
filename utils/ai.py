@@ -22,7 +22,7 @@ class ArtificialIntelligence():
 			return
 		if True:
 			load_dotenv()
-			channel_id = os.getenv('channel_posts')
+			channel_id = int(os.getenv('channel_posts'))
 			channel = bot.get_channel(channel_id)
 			if channel:
 				getho = geth.Gethonis(os.getenv('token_gethonis'), os.getenv('baseurl_gethonis'))

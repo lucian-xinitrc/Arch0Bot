@@ -125,6 +125,7 @@ For API Documentation see [Gethonis API Repo](https://github.com/lucian-xinitrc/
 Name: Lucian-Florin Cusmir
 
 Github: [github.com/lucian-xinitrc](https://github.com/lucian-xinitrc)
-Github: [/in/lucian-florin-cusmir-fullstackdev-](https://www.linkedin.com/in/lucian-florin-cusmir-fullstackdev/)
+
+Linkedin: [/in/lucian-florin-cusmir-fullstackdev-](https://www.linkedin.com/in/lucian-florin-cusmir-fullstackdev/)
 
 Email: cusmirlucian@gmail.com
