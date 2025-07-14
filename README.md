@@ -18,7 +18,7 @@
 13. [Contact](#-13-contact)
 
 ## 📸 1. Live Demo / Screenshots / Video
-
+![ Arch0Test ](.images/arch0Test.png)
 
 ## 🧠 2. Overview / Introduction
 **Arch0 is an autonomous AI Discord bot that acts as:**
