@@ -21,7 +21,7 @@ class ArtificialIntelligence():
 		if message.author == bot.user:
 			return
 		if True:
-			load_dotenv()
+			load_dotenv('.env')
 			channel_id = int(os.getenv('channel_posts'))
 			channel = bot.get_channel(channel_id)
 			if channel:
