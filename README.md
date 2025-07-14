@@ -2,7 +2,7 @@
 ### AI-powered Discord chatbot, moderator, and remote content broadcaster always watching, always learning.
 ## 📚 Table of Contents
 
-1. [Screenshots / Diagram](#1-live-demo--screenshots--video)
+1. [Screenshots / Diagram](#-1-live-demo--screenshots--video)
 2. [Overview](#-2-overview--introduction)
 3. [Features](#-3-features)
 4. [Tech Stack](#-4-tech-stack)
