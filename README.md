@@ -1,5 +1,6 @@
 # 🚀 Arch0
 ### AI-powered Discord chatbot, moderator, and remote content broadcaster always watching, always learning.
+
 ## 📚 Table of Contents
 
 1. [Screenshots / Diagram](#-1-live-demo--screenshots--video)
@@ -18,7 +19,6 @@
 
 ## 📸 1. Live Demo / Screenshots / Video
 
-![ Arch0Test ](.images/arch0Test.png)
 
 ## 🧠 2. Overview / Introduction
 **Arch0 is an autonomous AI Discord bot that acts as:**
