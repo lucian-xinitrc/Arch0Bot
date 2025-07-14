@@ -24,7 +24,6 @@
 **Arch0 is an autonomous AI Discord bot that acts as:**
 * Discord chatbot based on disnake
 * A natural language chatbot using GPT-based intelligence
-* A natural language chatbot using GPT-based intelligence
 * A content relay system receiving posts from an Android app via a Gethonis API based on FastAPI
 
 **Designed for:**
