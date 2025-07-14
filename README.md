@@ -91,7 +91,7 @@ Prerequisites:
 * ```sudo docker run -d --restart unless-stopped --name arch0-bot arch0```
 
 ## 📬 7. Example Usage
-* Generate your bot's invite
+* Generate your invite
 * Invite it in your discord server
 * Mention him in your server and he will respond quickly
 
