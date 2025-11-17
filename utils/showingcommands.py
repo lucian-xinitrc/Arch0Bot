@@ -11,7 +11,7 @@ class ShowingCommands():
 		await ctx.response.send_message(f"# Windows isn't a virus, viruses do something.")
 
 	@prompt.slash_command(description="Opens the minecraft server")
-	async def start(inter, ctx):
+	async def startserver(inter, ctx):
 		try:
 			data = {'headers': 'string', 'command':'start'}
 			response = requests.post('http://gethonis.com:8888/api/insertCommand', data=data)
