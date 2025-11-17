@@ -9,6 +9,17 @@ class ShowingCommands():
 	@prompt.slash_command(description="Sends the bot's latency.")
 	async def arch(inter, ctx):
 		await ctx.response.send_message(f"# Windows isn't a virus, viruses do something.")
+
+	@prompt.slash_command(description="Opens the minecraft server")
+	async def start(inter, ctx):
+		try:
+			data = {'headers': 'string', 'command':'start'}
+			response = requests.post('http://gethonis.com:8888/api/insertCommand', data=data)
+
+			if response.status_code == 200:
+				await ctx.response.send_message("Server is running!")
+		except:
+			await ctx.response.send_message("There was an error!")
 	@prompt.slash_command(description="First Prompt")
 	async def help(inter, ctx):
 		await ctx.response.send_message("Hi")
