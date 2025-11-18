@@ -16,7 +16,7 @@ class ShowingCommands():
 			data = { "headers": "string", "command": "start" }
 			response = requests.post('http://gethonis.com:8888/api/insertCommand', json=data)
 			result = response.json()
-			if result['status'] == "start":
+			if result['status'] == "started":
 				await ctx.response.send_message(result['result'])
 		except:
 			await ctx.response.send_message("There was an error!")
