@@ -15,9 +15,20 @@ class ShowingCommands():
 		try:
 			data = { "headers": "string", "command": "start" }
 			response = requests.post('http://gethonis.com:8888/api/insertCommand', json=data)
-
-			if response.status_code == 200:
-				await ctx.response.send_message("Server is running!")
+			result = response.json()
+			if result['status'] == "start":
+				await ctx.response.send_message(result['result'])
+		except:
+			await ctx.response.send_message("There was an error!")
+			@prompt.slash_command(description="Opens the minecraft server")
+	@prompt.slash_command(description="Closes the Minecraft Server")
+	async def stop_mc_server(inter, ctx):
+		try:
+			data = { "headers": "string", "command": "close" }
+			response = requests.post('http://gethonis.com:8888/api/insertCommand', json=data)
+			result = response.json()
+			if result['status'] == "closed":
+				await ctx.response.send_message("Server closed")
 		except:
 			await ctx.response.send_message("There was an error!")
 	@prompt.slash_command(description="First Prompt")
