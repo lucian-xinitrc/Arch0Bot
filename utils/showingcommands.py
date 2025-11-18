@@ -13,7 +13,7 @@ class ShowingCommands():
 	@prompt.slash_command(description="Opens the minecraft server")
 	async def start_mc_server(inter, ctx):
 		try:
-			data = { "headers": "string", "command": "start"}
+			data = { "headers": "string", "command": "start" }
 			response = requests.post('http://gethonis.com:8888/api/insertCommand', data=data)
 
 			if response.status_code == 200:
