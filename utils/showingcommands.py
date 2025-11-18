@@ -20,7 +20,7 @@ class ShowingCommands():
 				await ctx.response.send_message(result['result'])
 		except:
 			await ctx.response.send_message("There was an error!")
-			@prompt.slash_command(description="Opens the minecraft server")
+
 	@prompt.slash_command(description="Closes the Minecraft Server")
 	async def stop_mc_server(inter, ctx):
 		try:
