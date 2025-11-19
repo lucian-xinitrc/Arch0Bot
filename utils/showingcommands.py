@@ -32,7 +32,6 @@ class ShowingCommands():
 
 	@prompt.slash_command(description="Inserts a command")
 	async def command_mc_server(inter, ctx, type: types, command):
-		sys_token = config.Config().token
 		try:
 			await ctx.response.send_message("Inserting...")
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
