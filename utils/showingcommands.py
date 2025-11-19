@@ -11,7 +11,6 @@ class types(str, Enum):
 
 class ShowingCommands():
 	prompt = config.Config().bot
-	sys_token = config.Config().token
 
 	@prompt.slash_command(description="Sends the bot's latency.")
 	async def arch(inter, ctx):
@@ -33,13 +32,14 @@ class ShowingCommands():
 
 	@prompt.slash_command(description="Inserts a command")
 	async def command_mc_server(inter, ctx, type: types, command):
+		sys_token = config.Config().token
 		try:
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
 				data = { "headers": sys_token, "command": command, "type": type }
 				response = requests.post('http://gethonis.com:8888/api/insertCustomCommand', json=data)
 				result = response.json()
-				if result['status'] == "started":
-					await ctx.response.send_message("Server Started")
+				if result['status'] == "inserted":
+					await ctx.response.send_message("Inserted")
 			else:
 				await ctx.response.send_message("You have no permission!")
 		except:
