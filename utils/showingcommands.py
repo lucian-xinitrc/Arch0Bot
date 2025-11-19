@@ -34,13 +34,15 @@ class ShowingCommands():
 	async def command_mc_server(inter, ctx, type: types, command):
 		sys_token = config.Config().token
 		try:
+			await ctx.response.send_message("Inserting...")
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
 				data = { "headers": sys_token, "command": command, "type": type }
 				response = requests.post('http://gethonis.com:8888/api/insertCustomCommand', json=data)
 				result = response.json()
-				await ctx.response.send_message("Inserted")
+				if result['status'] == "inserted":
+					await ctx.edit_original_response(content="Error")
 			else:
-				await ctx.response.send_message("You have no permission!")
+				await ctx.edit_original_response(content="You have no permission to executed this command")
 		except:
 			await ctx.response.send_message("There was an error")
 
