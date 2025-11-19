@@ -38,8 +38,7 @@ class ShowingCommands():
 				data = { "headers": sys_token, "command": command, "type": type }
 				response = requests.post('http://gethonis.com:8888/api/insertCustomCommand', json=data)
 				result = response.json()
-				if result['status'] == "inserted":
-					await ctx.response.send_message("Inserted")
+				await ctx.response.send_message("Inserted")
 			else:
 				await ctx.response.send_message("You have no permission!")
 		except:
