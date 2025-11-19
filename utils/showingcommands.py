@@ -15,7 +15,7 @@ class ShowingCommands():
 	async def start_mc_server(inter, ctx):
 		try:
 			if inter.author.id == 1135659932000202942 or inter.author.id == 1027255470429319228:
-				data = { "headers": sys_token, "command": "start" }
+				data = { "headers": "string", "command": "start" }
 				response = requests.post('http://gethonis.com:8888/api/insertCommand', json=data)
 				result = response.json()
 				if result['status'] == "started":
@@ -29,7 +29,7 @@ class ShowingCommands():
 	async def stop_mc_server(inter, ctx):
 		try:
 			if inter.author.id == 1135659932000202942 or inter.author.id == 1027255470429319228:
-				data = { "headers": sys_token, "command": "close" }
+				data = { "headers": "string", "command": "close" }
 				response = requests.post('http://gethonis.com:8888/api/insertCommand', json=data)
 				result = response.json()
 				if result['status'] == "closed":
