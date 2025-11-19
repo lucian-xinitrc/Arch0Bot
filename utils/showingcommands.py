@@ -1,7 +1,13 @@
 import disnake
 import requests
+from enum import Enum
 from disnake.ext import commands
 from . import config
+
+class types(str, Enum):
+	say = "say"
+	op = "op"
+	custom = "custom"
 
 class ShowingCommands():
 	prompt = config.Config().bot
@@ -24,6 +30,20 @@ class ShowingCommands():
 				await ctx.response.send_message("You have no permission!")
 		except:
 			await ctx.response.send_message("There was an error!")
+
+	@prompt.slash_command(description="Inserts a command")
+	async def command_mc_server(inter, ctx, type: types, command):
+		try:
+			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
+				data = { "headers": sys_token, "command": command, "type": type }
+				response = requests.post('http://gethonis.com:8888/api/insertCustomCommand', json=data)
+				result = response.json()
+				if result['status'] == "started":
+					await ctx.response.send_message("Server Started")
+			else:
+				await ctx.response.send_message("You have no permission!")
+		except:
+			await ctx.response.send_message("There was an error")
 
 	@prompt.slash_command(description="Closes the Minecraft Server")
 	async def stop_mc_server(inter, ctx):
