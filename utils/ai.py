@@ -28,7 +28,10 @@ class ArtificialIntelligence():
 		response = requests.post('http://gethonis.com:8888/api/getOutput', json=data)
 		result = response.json()
 		if result['status'] == "success":
-			await channel.send(result['output'])
+			channel_id = 1440635903617011786
+			channel = bot.get_channel(channel_id)
+			if channel:
+				await channel.send(result['output'])
 		if message.author == bot.user:
 			return
 		if True:
