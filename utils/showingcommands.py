@@ -5,6 +5,7 @@ from . import config
 
 class ShowingCommands():
 	prompt = config.Config().bot
+	sys_token = config.Config().token
 
 	@prompt.slash_command(description="Sends the bot's latency.")
 	async def arch(inter, ctx):
@@ -13,22 +14,28 @@ class ShowingCommands():
 	@prompt.slash_command(description="Opens the minecraft server")
 	async def start_mc_server(inter, ctx):
 		try:
-			data = { "headers": "string", "command": "start" }
-			response = requests.post('http://gethonis.com:8888/api/insertCommand', json=data)
-			result = response.json()
-			if result['status'] == "started":
-				await ctx.response.send_message("Server Started")
+			if inter.author.id == 1135659932000202942 or inter.author.id == 1027255470429319228:
+				data = { "headers": sys_token, "command": "start" }
+				response = requests.post('http://gethonis.com:8888/api/insertCommand', json=data)
+				result = response.json()
+				if result['status'] == "started":
+					await ctx.response.send_message("Server Started")
+			else:
+				await ctx.response.send_message("You have no permission!")
 		except:
 			await ctx.response.send_message("There was an error!")
 
 	@prompt.slash_command(description="Closes the Minecraft Server")
 	async def stop_mc_server(inter, ctx):
 		try:
-			data = { "headers": "string", "command": "close" }
-			response = requests.post('http://gethonis.com:8888/api/insertCommand', json=data)
-			result = response.json()
-			if result['status'] == "closed":
-				await ctx.response.send_message("Server closed")
+			if inter.author.id == 1135659932000202942 or inter.author.id == 1027255470429319228:
+				data = { "headers": sys_token, "command": "close" }
+				response = requests.post('http://gethonis.com:8888/api/insertCommand', json=data)
+				result = response.json()
+				if result['status'] == "closed":
+					await ctx.response.send_message("Server closed")
+			else:
+				await ctx.response.send_message("You have no permission!")
 		except:
 			await ctx.response.send_message("There was an error!")
 	@prompt.slash_command(description="First Prompt")

