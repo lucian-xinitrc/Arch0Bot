@@ -14,7 +14,7 @@ class ShowingCommands():
 	@prompt.slash_command(description="Opens the minecraft server")
 	async def start_mc_server(inter, ctx):
 		try:
-			if inter.author.id == 1135659932000202942 or inter.author.id == 1027255470429319228:
+			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
 				data = { "headers": "string", "command": "start" }
 				response = requests.post('http://gethonis.com:8888/api/insertCommand', json=data)
 				result = response.json()
@@ -28,7 +28,7 @@ class ShowingCommands():
 	@prompt.slash_command(description="Closes the Minecraft Server")
 	async def stop_mc_server(inter, ctx):
 		try:
-			if inter.author.id == 1135659932000202942 or inter.author.id == 1027255470429319228:
+			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
 				data = { "headers": "string", "command": "close" }
 				response = requests.post('http://gethonis.com:8888/api/insertCommand', json=data)
 				result = response.json()
