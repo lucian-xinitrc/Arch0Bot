@@ -43,7 +43,7 @@ class ShowingCommands():
 			else:
 				await ctx.edit_original_response(content="You have no permission to executed this command")
 		except:
-			await ctx.response.send_message("There was an error")
+			await ctx.edit_original_response("There was an error")
 
 	@prompt.slash_command(description="Closes the Minecraft Server")
 	async def stop_mc_server(inter, ctx):
