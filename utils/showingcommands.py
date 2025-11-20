@@ -11,6 +11,7 @@ class types(str, Enum):
 
 class ShowingCommands():
 	prompt = config.Config().bot
+	sys_token = config.Config().token
 
 	@prompt.slash_command(description="Sends the bot's latency.")
 	async def arch(inter, ctx):
@@ -32,6 +33,7 @@ class ShowingCommands():
 
 	@prompt.slash_command(description="Inserts a command")
 	async def command_mc_server(inter, ctx, type: types, command):
+		global sys_token
 		try:
 			await ctx.response.send_message("Inserting...")
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
