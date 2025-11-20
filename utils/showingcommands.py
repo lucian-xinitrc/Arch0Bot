@@ -38,7 +38,7 @@ class ShowingCommands():
 		try:
 			
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
-				data = { "headers": sys_token, "command": command, "type": type }
+				data = { "headers": str(sys_token), "command": command, "type": "say" }
 				response = requests.post('http://gethonis.com:8888/api/insertCustomCommand', json=data)
 				result = response.json()
 				if result['status'] == "inserted":
