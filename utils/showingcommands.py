@@ -1,5 +1,4 @@
-import disnake
-import requests
+import disnake, requests
 from enum import Enum
 from disnake.ext import commands
 from . import config

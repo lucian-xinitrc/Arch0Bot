@@ -1,6 +1,4 @@
-import os
-import disnake
-import datetime
+import os, disnake, datetime
 from dotenv import load_dotenv
 from disnake.ext import commands
 load_dotenv()

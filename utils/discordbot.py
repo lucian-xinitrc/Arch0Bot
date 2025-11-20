@@ -1,4 +1,4 @@
-import disnake
+import disnake, requests
 from . import config
 from . import ai
 from . import moderation as md
