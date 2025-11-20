@@ -34,8 +34,9 @@ class ShowingCommands():
 	@prompt.slash_command(description="Inserts a command")
 	async def command_mc_server(inter, ctx, type: types, command):
 		global sys_token
+		await ctx.response.send_message("Inserting...")
 		try:
-			await ctx.response.send_message("Inserting...")
+			
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
 				data = { "headers": sys_token, "command": command, "type": type }
 				response = requests.post('http://gethonis.com:8888/api/insertCustomCommand', json=data)
