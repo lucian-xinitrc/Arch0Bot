@@ -24,7 +24,7 @@ class ArtificialIntelligence():
 	async def on_message(message):
 		bot = config.Config().bot
 		sys_token = config.Config().token
-		data = { "headers": sys_token, "command": "output" }
+		data = { "headers": "string", "command": "output" }
 		response = requests.post('http://gethonis.com:8888/api/getOutput', json=data)
 		result = response.json()
 		if result['status'] == 'success':
