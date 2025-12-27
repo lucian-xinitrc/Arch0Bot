@@ -25,15 +25,18 @@ class ArtificialIntelligence():
 		bot = config.Config().bot
 		sys_token = config.Config().token
 		data = { "headers": "string", "command": "output" }
-		response = requests.post('http://gethonis.com:8888/api/getOutput', json=data)
-		if response != None:
-			result = response.json()
-			if result['status']:
-				if result['status'] == 'success':
-					channel_id = 1440635903617011786
-					channel = bot.get_channel(channel_id)
-					if channel:
-						await channel.send(result['output'])
+		try:
+			response = requests.post('http://gethonis.com:8888/api/getOutput', json=data)
+			if response != None:
+				result = response.json()
+				if result['status']:
+					if result['status'] == 'success':
+						channel_id = 1440635903617011786
+						channel = bot.get_channel(channel_id)
+						if channel:
+							await channel.send(result['output'])
+		except:
+			await channel.send("There is some error")
 		if message.author == bot.user:
 			return
 		if True:
