@@ -31,7 +31,7 @@ class ShowingCommands():
 			await ctx.response.send_message("There was an error!")
 
 	@prompt.slash_command(description="Inserts a command")
-	async def command_mc_server(inter, ctx, command, type: types,):
+	async def command_mc_server(inter, ctx, type: types, command):
 		global sys_token
 		await ctx.response.send_message("Inserting...")
 		try:
