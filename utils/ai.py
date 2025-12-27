@@ -36,7 +36,7 @@ class ArtificialIntelligence():
 						if channel:
 							await channel.send(result['output'])
 		except:
-			await channel.send("There is some error")
+			print("There is some error")
 		if message.author == bot.user:
 			return
 		if True:
