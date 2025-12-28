@@ -10,7 +10,7 @@ class types(str, Enum):
 
 class ShowingCommands():
 	prompt = config.Config().bot
-	sys_token = config.Config().token
+
 
 	@prompt.slash_command(description="Sends the bot's latency.")
 	async def arch(inter, ctx):
@@ -18,9 +18,10 @@ class ShowingCommands():
 
 	@prompt.slash_command(description="Opens the minecraft server")
 	async def start_mc_server(inter, ctx):
+		sys_token = config.Config().token
 		try:
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
-				data = { "headers": "string", "command": "start" }
+				data = { "headers": sys_token, "command": "start" }
 				response = requests.post('http://gethonis.com:8888/api/insertCommand', json=data)
 				result = response.json()
 				if result['status'] == "started":
@@ -32,12 +33,12 @@ class ShowingCommands():
 
 	@prompt.slash_command(description="Inserts a command")
 	async def command_mc_server(inter, ctx, type: types, command):
-		global sys_token
+		sys_token = config.Config().token
 		await ctx.response.send_message("Inserting...")
 		try:
 			
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
-				data = { "headers": "string", "command": command, "type": type }
+				data = { "headers": sys_token, "command": command, "type": type }
 				response = requests.post('http://gethonis.com:8888/api/insertCustomCommand', json=data)
 				result = response.json()
 				if result['status'] == "inserted":
