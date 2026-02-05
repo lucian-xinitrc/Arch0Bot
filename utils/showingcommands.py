@@ -51,9 +51,10 @@ class ShowingCommands():
 
 	@prompt.slash_command(description="Closes the Minecraft Server")
 	async def stop_mc_server(inter, ctx):
+		sys_token = config.Config().token
 		try:
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
-				data = { "headers": "string", "command": "close" }
+				data = { "headers": sys_token, "command": "close" }
 				response = requests.post('http://91.99.202.74:8888/api/insertCommand', json=data)
 				result = response.json()
 				if result['status'] == "closed":
