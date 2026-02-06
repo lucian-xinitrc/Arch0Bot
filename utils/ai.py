@@ -63,7 +63,7 @@ class ArtificialIntelligence():
 					print("Looking for post")
 
 
-		if bot.user in message.mentions:  
+		if bot.user in message.mentions and (message.author.id == 1135659932000202942 or message.author.id == 1027255470429319228):  
 			async with message.channel.typing():
 				load_dotenv()
 				messages[0]["content"] = os.getenv('arch0_training')
