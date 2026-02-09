@@ -3,6 +3,7 @@ from enum import Enum
 from disnake.ext import commands
 from . import config
 
+
 class types(str, Enum):
 	say = "say"
 	op = "op"
