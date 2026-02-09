@@ -24,7 +24,7 @@ class ShowingCommands():
 				response = requests.post('http://91.99.202.74:8888/api/insertCommand', json=data)
 				result = response.json()
 				if result['status'] == "started":
-					await ctx.response.send_message("@everyone, The server just started!")
+					await ctx.response.send_message("@everyone The server just started!")
 				else:
 					await ctx.response.send_message("There was an error, contact admin!")
 			else:
@@ -58,7 +58,7 @@ class ShowingCommands():
 				response = requests.post('http://91.99.202.74:8888/api/insertCommand', json=data)
 				result = response.json()
 				if result['status'] == "closed":
-					await ctx.response.send_message("@everyone, The server is closed now!")
+					await ctx.response.send_message("@everyone The server is closed now!")
 			else:
 				await ctx.response.send_message("You have no permission!")
 		except:
