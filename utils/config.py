@@ -4,7 +4,9 @@ from disnake.ext import commands
 load_dotenv()
 
 class Config():
-	bot = commands.Bot(intents=disnake.Intents.all())
+	bot = commands.Bot(intents=disnake.Intents.all(), allowed_mentions=AllowedMentions(
+        everyone=True,
+    ),)
 
 	discord_token = os.getenv('discord_token')
 	token = os.getenv('token')
