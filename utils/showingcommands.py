@@ -27,7 +27,7 @@ class ShowingCommands():
 				if result['status'] == "started":
 					channel = prompt.get_channel(1469673733580128431)
 
-					channel.send("@here the server started! [ test message ]")
+					await channel.send("@here the server started! [ test message ]")
 					await ctx.response.send_message("Server Started")
 				else:
 					await ctx.response.send_message("There was an error, contact admin!")
