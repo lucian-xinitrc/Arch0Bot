@@ -24,7 +24,6 @@ class ShowingCommands():
 				response = requests.post('http://91.99.202.74:8888/api/insertCommand', json=data)
 				result = response.json()
 				if result['status'] == "started":
-					await ctx.response.send_message(f"Server Started {channel}")
 					channel = inter.client.get_channel(1469673733580128431)
 					if channel:
 					    await channel.send("@here The server started!")
