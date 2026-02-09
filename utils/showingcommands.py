@@ -26,7 +26,7 @@ class ShowingCommands():
 				if result['status'] == "started":
 					channel = inter.client.get_channel(1469673733580128431)
 					if channel:
-					    await channel.send("@here The server started!")
+					    ctx.response.send_message("@here The server started")
 				else:
 					await ctx.response.send_message("There was an error, contact admin!")
 			else:
