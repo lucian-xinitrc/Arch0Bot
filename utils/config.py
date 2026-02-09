@@ -4,7 +4,7 @@ from disnake.ext import commands
 load_dotenv()
 
 class Config():
-	bot = commands.Bot(intents=disnake.Intents.all(), allowed_mentions=AllowedMentions(
+	bot = commands.Bot(intents=disnake.Intents.all(), allowed_mentions=disnake.AllowedMentions(
         everyone=True,
     ),)
 
