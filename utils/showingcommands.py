@@ -55,7 +55,7 @@ class ShowingCommands():
 		try:
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
 				data = { "headers": sys_token, "command": "close" }
-				response = requests.post('http://91.99.202.74:8888/api/insertCommand', json=data)
+				response = requests.post('http://46.225.165.219:8888/api/insertCommand', json=data)
 				result = response.json()
 				if result['status'] == "closed":
 					await ctx.response.send_message("@everyone The server is closed now!")
