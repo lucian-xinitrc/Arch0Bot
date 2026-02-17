@@ -51,5 +51,5 @@ class DiscordBot():
 	@sc.ShowingCommands().prompt.event
 	async def on_ready():
 		activity = disnake.Game(name="Arch BTW!")
-		watcher.start()
+		self.watcher.start()
 		await sc.ShowingCommands().prompt.change_presence(status=disnake.Status.idle, activity=activity)
