@@ -20,7 +20,7 @@ class Config():
 	jokes_api = os.getenv('jokes_api')
 
 
-	def decrypt(ciphertext_b64):
+	def decrypt(self, ciphertext_b64):
 	    cipher = AES.new(os.getenv('decrypt_key').encode(), AES.MODE_ECB)
 	    decrypted = cipher.decrypt(base64.b64decode(ciphertext_b64))
 	    pad = decrypted[-1]
