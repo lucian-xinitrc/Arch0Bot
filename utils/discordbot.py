@@ -47,7 +47,7 @@ class DiscordBot():
 	        decryptedMsg = config.Config().decrypt(msg)
 	        check = True
 	        if channel:
-	        	for word in ["login", "register", "msg"]:
+	        	for word in ["login", "register", "msg", "/give"]:
 	        		if word in decryptedMsg:
 	        			check = False
 	        			break
