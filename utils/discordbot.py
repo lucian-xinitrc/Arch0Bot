@@ -36,7 +36,7 @@ class DiscordBot():
 	async def watcher():
 	    global last_cache
 	    print("Running here")
-	    row = get_last_message()
+	    row = self.get_last_message()
 	    if not row:
 	        return
 
