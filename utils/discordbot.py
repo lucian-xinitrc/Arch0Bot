@@ -52,7 +52,7 @@ class DiscordBot():
 	        			check = False
 	        			break
 	        	if check:
-	            	await channel.send(f"**{config.Config().decrypt(author)}**: {config.Config().decrypt(msg)}")
+	        		await channel.send(f"**{config.Config().decrypt(author)}**: {config.Config().decrypt(msg)}")
 
 	watcher.start()
 	async def on_ready():
