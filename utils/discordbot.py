@@ -49,7 +49,7 @@ class DiscordBot():
 	        if channel:
 	            await channel.send(f"**{author}**: {msg}")
 
-	self.watcher.start()
+	watcher.start()
 	async def on_ready():
 		activity = disnake.Game(name="Arch BTW!")
 		
