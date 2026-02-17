@@ -1,6 +1,8 @@
-import os, disnake, datetime
+import os, disnake, datetime, base64
+from Crypto.Cipher import AES
 from dotenv import load_dotenv
 from disnake.ext import commands
+
 load_dotenv()
 
 class Config():
