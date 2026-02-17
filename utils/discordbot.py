@@ -34,7 +34,7 @@ class DiscordBot():
 	@tasks.loop(seconds=2)
 	async def watcher():
 	    global last_cache
-
+	    print("Running here")
 	    row = get_last_message()
 	    if not row:
 	        return
