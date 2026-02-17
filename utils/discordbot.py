@@ -20,11 +20,6 @@ class DiscordBot():
 	def config_bot():
 		return self.bot
 
-	def get_last_message():
-	    
-
-	    return row
-
 	@tasks.loop(seconds=2)
 	async def watcher():
 	    global last_cache
