@@ -46,7 +46,7 @@ class DiscordBot():
 
 	        if channel:
 	        	if "login" not in msg or "register" not in msg or "/msg" not in msg:
-	            	await channel.send(f"**{config.Config().decrypt(author)}**: {config.Config().decrypt(msg)}")
+					await channel.send(f"**{config.Config().decrypt(author)}**: {config.Config().decrypt(msg)}")
 
 	
 	async def on_ready():
