@@ -4,6 +4,7 @@ from . import config
 from openai import OpenAI
 from dotenv import load_dotenv, dotenv_values
 from disnake.ext import commands, tasks
+
 load_dotenv()
 messages = [{"role": "system", "content": os.getenv('arch0_training') }]
 
@@ -13,13 +14,15 @@ def reload_env(path='.env'):
         os.environ[k] = v
 
 class ArtificialIntelligence():
+
 	load_dotenv()
 	prompt = config.Config().bot
 
 	async def listenerGeth():
 		bot = config.Config().bot
 		print("Arch0 is running.")
-		
+
+
 	@prompt.event 	
 	async def on_message(message):
 		bot = config.Config().bot
