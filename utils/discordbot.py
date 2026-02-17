@@ -55,9 +55,13 @@ class DiscordBot():
         			await channel.send(
             			f"**{config.Config().decrypt(author)}**: {decryptedMsg}"
         			)
-	
+        		else:
+        			await channel.send(
+            			f"Forbidden word"
+        			)
+	watcher.start()
 	async def on_ready():
 		activity = disnake.Game(name="Arch BTW!")
 		await sc.ShowingCommands().prompt.change_presence(status=disnake.Status.idle, activity=activity)
 
-	watcher.start()
+	
