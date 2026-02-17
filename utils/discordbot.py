@@ -45,7 +45,7 @@ class DiscordBot():
 	        channel = bot.get_channel(1473044902492246219)
 	        decryptedMsg = config.Config().decrypt(msg)
 	        if channel:
-	        	if word not in decryptedMsg for word in ["login", "register", "msg"]:
+	        	if all(word not in decryptedMsg for word in ["login", "register", "msg"]):
         			await channel.send(
             			f"**{config.Config().decrypt(author)}**: {decryptedMsg}"
         			)
