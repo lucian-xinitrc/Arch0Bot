@@ -43,7 +43,7 @@ class DiscordBot():
 	        last_cache = row
 
 	        author, msg = row
-	        channel = bot.get_channel(1469673733580128431)
+	        channel = bot.get_channel(1473044902492246219)
 	        decryptedMsg = config.Config().decrypt(msg)
 	        check = True
 	        if channel:
