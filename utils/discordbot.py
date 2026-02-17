@@ -49,7 +49,10 @@ class DiscordBot():
 	        	for word in ["login", "register", "msg"]:
 	        		if word in decryptedMsg:
 	        			check = True
-	        	if check == False:
+	        			print(descryptedMsg)
+	        			break
+	        			
+	        	if not check:
         			await channel.send(
             			f"**{config.Config().decrypt(author)}**: {decryptedMsg}"
         			)
