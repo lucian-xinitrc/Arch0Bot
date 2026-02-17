@@ -27,7 +27,6 @@ class DiscordBot():
 	    global last_cache
 	    bot = config.Config().bot
 	    db = config.Config().db_url
-	    print("Running here")
 	    conn = psycopg2.connect(db)
 	    cur = conn.cursor()
 
@@ -43,7 +42,7 @@ class DiscordBot():
 	        last_cache = row
 
 	        author, msg = row
-	        channel = bot.get_channel(1469673733580128431)
+	        channel = bot.get_channel(1473044902492246219)
 
 	        if channel:
 	            await channel.send(f"**{config.Config().decrypt(author)}**: {config.Config().decrypt(msg)}")
