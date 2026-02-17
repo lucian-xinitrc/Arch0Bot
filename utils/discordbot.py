@@ -1,9 +1,10 @@
-import disnake, requests, psycopg2
-from disnake.ext import tasks
+import disnake, requests, psycopg2, base64
 from . import config
 from . import ai
 from . import moderation as md
 from . import showingcommands as sc
+from disnake.ext import tasks
+from Crypto.Cipher import AES
 
 last_cache = None
 class DiscordBot():
@@ -45,7 +46,7 @@ class DiscordBot():
 	        channel = bot.get_channel(1469673733580128431)
 
 	        if channel:
-	            await channel.send(f"**{author}**: {msg}")
+	            await channel.send(f"**{config.Config().decrypt(enc_msg)}**: {config.Config().decrypt(msg)}")
 
 	watcher.start()
 	async def on_ready():

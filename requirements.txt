@@ -6,3 +6,4 @@ datetime
 dotenv
 gethonis
 psycopg2-binary
+pycryptodome
