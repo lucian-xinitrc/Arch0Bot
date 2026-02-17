@@ -21,6 +21,14 @@ class DiscordBot():
 		return self.bot
 
 	def get_last_message():
+	    
+
+	    return row
+
+	@tasks.loop(seconds=2)
+	async def watcher():
+	    global last_cache
+	    print("Running here")
 	    conn = psycopg2.connect(db)
 	    cur = conn.cursor()
 
@@ -29,14 +37,6 @@ class DiscordBot():
 
 	    cur.close()
 	    conn.close()
-
-	    return row
-
-	@tasks.loop(seconds=2)
-	async def watcher(self):
-	    global last_cache
-	    print("Running here")
-	    row = self.get_last_message()
 	    if not row:
 	        return
 
