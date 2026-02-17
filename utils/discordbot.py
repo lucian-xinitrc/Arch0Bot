@@ -24,6 +24,7 @@ class DiscordBot():
 	@tasks.loop(seconds=2)
 	async def watcher():
 	    global last_cache
+	    bot = config.Config().bot
 	    db = config.Config().db_url
 	    print("Running here")
 	    conn = psycopg2.connect(db)
