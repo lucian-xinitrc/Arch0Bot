@@ -5,9 +5,10 @@ from . import ai
 from . import moderation as md
 from . import showingcommands as sc
 
+last_cache = None
 class DiscordBot():
 	c = config.Config()
-	last_cache = None
+	
 	db = c.db_url
 	token = c.discord_token
 
