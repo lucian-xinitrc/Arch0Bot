@@ -46,12 +46,11 @@ class DiscordBot():
 	        decryptedMsg = config.Config().decrypt(msg)
 	        check = False
 	        if channel:
-	        	for word in ["login", "register", "msg"]:
+	        	for word in ["login", "register", "msg", "/login", "/register", "/msg"]:
 	        		if word in decryptedMsg:
 	        			check = True
-	        			print(descryptedMsg)
 	        			break
-	        			
+
 	        	if not check:
         			await channel.send(
             			f"**{config.Config().decrypt(author)}**: {decryptedMsg}"
@@ -60,3 +59,5 @@ class DiscordBot():
 	async def on_ready():
 		activity = disnake.Game(name="Arch BTW!")
 		await sc.ShowingCommands().prompt.change_presence(status=disnake.Status.idle, activity=activity)
+
+	watcher.start()
