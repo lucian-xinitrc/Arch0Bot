@@ -48,8 +48,8 @@ class DiscordBot():
 
 	        if channel:
 	            await channel.send(f"**{author}**: {msg}")
-
+	self.watcher.start()
 	async def on_ready():
 		activity = disnake.Game(name="Arch BTW!")
-		self.watcher.start()
+		
 		await sc.ShowingCommands().prompt.change_presence(status=disnake.Status.idle, activity=activity)
