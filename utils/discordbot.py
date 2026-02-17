@@ -43,12 +43,11 @@ class DiscordBot():
 
 	        author, msg = row
 	        channel = bot.get_channel(1473044902492246219)
-			
-			if channel:
-				if "login" not in msg or "register" not in msg or "/msg" not in msg:
-					await channel.send(f"**{config.Config().decrypt(author)}**: {config.Config().decrypt(msg)}")
 
+	        if channel and ("login" not in msg or "register" not in msg or "/msg" not in msg):
+	            await channel.send(f"**{config.Config().decrypt(author)}**: {config.Config().decrypt(msg)}")
+
+	
 	async def on_ready():
 		activity = disnake.Game(name="Arch BTW!")
 		await sc.ShowingCommands().prompt.change_presence(status=disnake.Status.idle, activity=activity)
-
