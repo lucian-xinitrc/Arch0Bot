@@ -27,6 +27,7 @@ class DiscordBot():
 	    global last_cache
 	    bot = config.Config().bot
 	    db = config.Config().db_url
+	    print("Running here")
 	    conn = psycopg2.connect(db)
 	    cur = conn.cursor()
 
@@ -42,26 +43,19 @@ class DiscordBot():
 	        last_cache = row
 
 	        author, msg = row
-	        channel = bot.get_channel(1473044902492246219)
+	        channel = bot.get_channel(1469673733580128431)
 	        decryptedMsg = config.Config().decrypt(msg)
-	        check = False
+	        check = True
 	        if channel:
-	        	for word in ["login", "register", "msg", "/login", "/register", "/msg"]:
+	        	for word in ["login", "register", "msg"]:
 	        		if word in decryptedMsg:
-	        			check = True
+	        			check = False
 	        			break
+	        	if check:
+	            	await channel.send(f"**{config.Config().decrypt(author)}**: {config.Config().decrypt(msg)}")
 
-	        	if not check:
-        			await channel.send(
-            			f"**{config.Config().decrypt(author)}**: {decryptedMsg}"
-        			)
-        		else:
-        			await channel.send(
-            			f"Forbidden word"
-        			)
 	watcher.start()
 	async def on_ready():
 		activity = disnake.Game(name="Arch BTW!")
+		
 		await sc.ShowingCommands().prompt.change_presence(status=disnake.Status.idle, activity=activity)
-
-	
