@@ -46,7 +46,7 @@ class DiscordBot():
 	        channel = bot.get_channel(1469673733580128431)
 
 	        if channel:
-	            await channel.send(f"**{config.Config().decrypt(enc_msg)}**: {config.Config().decrypt(msg)}")
+	            await channel.send(f"**{config.Config().decrypt(author)}**: {config.Config().decrypt(msg)}")
 
 	watcher.start()
 	async def on_ready():
