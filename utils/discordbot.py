@@ -55,7 +55,7 @@ class DiscordBot():
 	        		await channel.send(f"**{config.Config().decrypt(author)}**: {config.Config().decrypt(msg)}")
 
 	watcher.start()
-	
+	# Status
 	@sc.ShowingCommands().prompt.event
 	async def on_ready():
 		activity = disnake.Game(name="Arch BTW!")
