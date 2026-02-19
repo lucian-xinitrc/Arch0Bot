@@ -27,7 +27,6 @@ class DiscordBot():
 	    global last_cache
 	    bot = config.Config().bot
 	    db = config.Config().db_url
-	    print("Running here")
 	    conn = psycopg2.connect(db)
 	    cur = conn.cursor()
 
@@ -54,10 +53,11 @@ class DiscordBot():
 	        	if check:
 	        		await channel.send(f"**{config.Config().decrypt(author)}**: {config.Config().decrypt(msg)}")
 
-	watcher.start()
-	# Status
+	
 	@sc.ShowingCommands().prompt.event
 	async def on_ready():
 		activity = disnake.Game(name="Arch BTW!")
 		
 		await sc.ShowingCommands().prompt.change_presence(status=disnake.Status.idle, activity=activity)
+
+	watcher.start()
