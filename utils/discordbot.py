@@ -22,38 +22,6 @@ class DiscordBot():
 	def config_bot():
 		return self.bot
 
-	@tasks.loop(seconds=2)
-	async def watcher():
-	    global last_cache
-	    bot = config.Config().bot
-	    db = config.Config().db_url
-	    conn = psycopg2.connect(db)
-	    cur = conn.cursor()
-
-	    cur.execute("SELECT author, message FROM public.last_message WHERE id = 1")
-	    row = cur.fetchone()
-
-	    cur.close()
-	    conn.close()
-	    if not row:
-	        return
-
-	    if row != last_cache:
-	        last_cache = row
-
-	        author, msg = row
-	        channel = bot.get_channel(1473044902492246219)
-	        decryptedMsg = config.Config().decrypt(msg)
-	        check = True
-	        if channel:
-	        	for word in ["login", "register", "msg", "/give"]:
-	        		if word in decryptedMsg:
-	        			check = False
-	        			break
-	        	if check:
-	        		await channel.send(f"**{config.Config().decrypt(author)}**: {config.Config().decrypt(msg)}")
-
-	watcher.start()
 	@sc.ShowingCommands().prompt.event
 	async def on_ready():
 		activity = disnake.Game(name="Arch BTW!")
