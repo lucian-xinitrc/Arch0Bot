@@ -63,6 +63,7 @@ class ShowingCommands():
 				await ctx.response.send_message("You have no permission!")
 		except:
 			await ctx.response.send_message("There was an error!")
+	
 	@prompt.slash_command(description="First Prompt")
 	async def help(inter, ctx):
 		await ctx.response.send_message("Hi")
