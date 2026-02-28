@@ -1,4 +1,4 @@
-dimport os, json, disnake, openai, requests, asyncio, textwrap
+import os, json, disnake, openai, requests, asyncio, textwrap
 import gethonis as geth
 from . import config
 from openai import OpenAI
@@ -94,7 +94,7 @@ class ArtificialIntelligence():
 		except:
 			await msg.edit("Your token expired.")
 	"""
-	
+
 	@prompt.slash_command(description="Image Generator")
 	async def image(inter, ctx, arg):
 		try:
