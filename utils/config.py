@@ -12,6 +12,7 @@ class Config():
 	)
 
 	discord_token = os.getenv('discord_token')
+	api_ip = os.getenv('api_ip')
 	token = os.getenv('token')
 	db_url = os.getenv('dburl')
 	discord_bot_status_name = os.getenv('discord_bot_status_name')

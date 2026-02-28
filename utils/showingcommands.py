@@ -18,10 +18,11 @@ class ShowingCommands():
 	@prompt.slash_command(description="Opens the minecraft server")
 	async def start_mc_server(inter, ctx):
 		sys_token = config.Config().token
+		ip = config.Config().api_ip
 		try:
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
 				data = { "headers": sys_token, "command": "start" }
-				response = requests.post('http://46.225.184.241:8888/api/insertCommand', json=data)
+				response = requests.post(f"http://{ip}:8888/api/insertCommand", json=data)
 				result = response.json()
 				if result['status'] == "started":
 					await ctx.response.send_message("@everyone The server just started!")
@@ -40,7 +41,7 @@ class ShowingCommands():
 			
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
 				data = { "headers": sys_token, "command": command, "type": type }
-				response = requests.post('http://46.225.184.241:8888/api/insertCustomCommand', json=data)
+				response = requests.post(f"http://{ip}:8888/api/nsertCustomCommand", json=data)
 				result = response.json()
 				if result['status'] == "inserted":
 					await ctx.edit_original_response(content="Inserted")
@@ -55,7 +56,7 @@ class ShowingCommands():
 		try:
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
 				data = { "headers": sys_token, "command": "close" }
-				response = requests.post('http://46.225.184.241:8888/api/insertCommand', json=data)
+				response = requests.post(f"http://{ip}:8888/api/insertCommand", json=data)
 				result = response.json()
 				if result['status'] == "closed":
 					await ctx.response.send_message("@everyone The server is closed now!")

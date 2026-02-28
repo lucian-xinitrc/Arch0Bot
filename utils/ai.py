@@ -1,4 +1,4 @@
-import os, json, disnake, openai, requests, asyncio, textwrap
+dimport os, json, disnake, openai, requests, asyncio, textwrap
 import gethonis as geth
 from . import config
 from openai import OpenAI
@@ -29,6 +29,7 @@ class ArtificialIntelligence():
 		sys_token = config.Config().token
 		if message.author == bot.user:
 			return
+		"""
 		if True:
 			load_dotenv('.env')
 			reload_env('.env')
@@ -46,25 +47,25 @@ class ArtificialIntelligence():
 						title = post.get("Title", "Untitled Post")
 						paragraphs = post.get("paragraphs", [])
 						footer_text = post.get("Footer", "")
-						joined_paragraphs = "\n\n".join(paragraphs)
+						joined_paragraphs = .join(paragraphs)
 
 						embed = disnake.Embed(
 						    title=title,
-						    description="\n\n".join(paragraphs),
+						    description=.join(paragraphs),
 						    color=disnake.Color.gold()
 						)
 						embed.set_footer(text=footer_text)
-						output = textwrap.dedent(f"""
+						output = textwrap.dedent(f""
 						# {title}
 						{joined_paragraphs}
 						{footer_text}
-						""")
+						"")
 						await channel.send(embed=embed)
 					else:
 						await channel.send("Looking for post")
 				except:
 					print("Looking for post")
-
+			"""
 
 		if bot.user in message.mentions and (message.author.id == 1135659932000202942 or message.author.id == 1027255470429319228):  
 			async with message.channel.typing():
@@ -79,7 +80,7 @@ class ArtificialIntelligence():
 				)
 				messages.append(response.choices[0].message)
 				await message.reply(response.choices[0].message.content)
-
+	"""
 	@prompt.slash_command(description="Gethonis")
 	async def geth(inter, ctx, message):
 		try:
@@ -92,7 +93,8 @@ class ArtificialIntelligence():
 				await msg.edit(content=response)
 		except:
 			await msg.edit("Your token expired.")
-
+	"""
+	
 	@prompt.slash_command(description="Image Generator")
 	async def image(inter, ctx, arg):
 		try:
