@@ -20,7 +20,7 @@ class ShowingCommands():
 		sys_token = config.Config().token
 		ip = config.Config().api_ip
 		try:
-			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
+			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228 or ctx.author.id == 1389333664000905426:
 				data = { "headers": sys_token, "command": "start" }
 				response = requests.post(f"http://{ip}:8888/api/insertCommand", json=data)
 				result = response.json()
@@ -36,10 +36,11 @@ class ShowingCommands():
 	@prompt.slash_command(description="Inserts a command")
 	async def command_mc_server(inter, ctx, type: types, command):
 		sys_token = config.Config().token
+		ip = config.Config().api_ip
 		await ctx.response.send_message("Inserting...")
 		try:
 			
-			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
+			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228 or ctx.author.id == 1389333664000905426:
 				data = { "headers": sys_token, "command": command, "type": type }
 				response = requests.post(f"http://{ip}:8888/api/insertCustomCommand", json=data)
 				result = response.json()
@@ -53,8 +54,9 @@ class ShowingCommands():
 	@prompt.slash_command(description="Closes the Minecraft Server")
 	async def stop_mc_server(inter, ctx):
 		sys_token = config.Config().token
+		ip = config.Config().api_ip
 		try:
-			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228:
+			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228 or ctx.author.id == 1389333664000905426:
 				data = { "headers": sys_token, "command": "close" }
 				response = requests.post(f"http://{ip}:8888/api/insertCommand", json=data)
 				result = response.json()
