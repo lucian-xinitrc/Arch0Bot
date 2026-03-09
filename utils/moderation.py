@@ -13,6 +13,7 @@ class ServerInfo():
  			avatarurl = user.avatar.url
 
  			embed=disnake.Embed(title="User's Details", color=disnake.Colour.red())
+ 			
  			embed.set_image(url=str(user.avatar.url))
  			creationDate = user.created_at.strftime("%a %#d %B %Y, %I:%M %p")
 
