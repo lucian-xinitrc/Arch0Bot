@@ -10,7 +10,6 @@ class Config():
 		intents=disnake.Intents.all(), 
 		allowed_mentions=disnake.AllowedMentions(everyone=True)
 	)
-
 	discord_token = os.getenv('discord_token')
 	api_ip = os.getenv('api_ip')
 	proxy1_ip = os.getenv('proxy1')
