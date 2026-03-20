@@ -19,20 +19,10 @@ class ShowingCommands():
 	async def start_mc_server(inter, ctx):
 		sys_token = config.Config().token
 		ip = config.Config().api_ip
-		proxy1 = config.Config().proxy1_ip
-		proxy2 = config.Config().proxy2_ip
-		proxy2 = config.Config().proxy3_ip
 		try:
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228 or ctx.author.id == 1389333664000905426:
 				data = { "headers": sys_token, "command": "start" }
 				response = requests.post(f"http://{ip}:8888/api/insertCommand", json=data)
-				response_proxy1 = requests.post(f"http://{proxy1}:8888/api/insertCommand", json=data)
-				response_proxy2 = requests.post(f"http://{proxy2}:8888/api/insertCommand", json=data)
-				response_proxy3 = requests.post(f"http://{proxy3}:8888/api/insertCommand", json=data)
-				result = response.json()
-				result1 = response1.json()
-				result2 = response2.json()
-				result3 = response3.json()
 				if result['status'] == "started":
 					await ctx.response.send_message("@everyone The server just started!")
 				else:
@@ -64,20 +54,10 @@ class ShowingCommands():
 	async def stop_mc_server(inter, ctx):
 		sys_token = config.Config().token
 		ip = config.Config().api_ip
-		proxy1 = config.Config().proxy1_ip
-		proxy2 = config.Config().proxy2_ip
-		proxy2 = config.Config().proxy3_ip
 		try:
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228 or ctx.author.id == 1389333664000905426:
 				data = { "headers": sys_token, "command": "close" }
 				response = requests.post(f"http://{ip}:8888/api/insertCommand", json=data)
-				response_proxy1 = requests.post(f"http://{proxy1}:8888/api/insertCommand", json=data)
-				response_proxy2 = requests.post(f"http://{proxy2}:8888/api/insertCommand", json=data)
-				response_proxy3 = requests.post(f"http://{proxy3}:8888/api/insertCommand", json=data)
-				result = response.json()
-				result1 = response1.json()
-				result2 = response2.json()
-				result3 = response3.json()
 				result = response.json()
 				if result['status'] == "closed":
 					await ctx.response.send_message("@everyone The server is closed now!")
