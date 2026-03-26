@@ -22,7 +22,7 @@ class ShowingCommands():
 		proxy1 = config.Config().proxy1_ip
 		proxy2 = config.Config().proxy2_ip
 		proxy3 = config.Config().proxy3_ip
-		await ctx.response.send_message("Please wait!!!")
+		await ctx.response.send_message("Please wait...")
 		try:
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228 or ctx.author.id == 1389333664000905426:
 				data = { "headers": sys_token, "command": "start" }
@@ -78,6 +78,7 @@ class ShowingCommands():
 		proxy1 = config.Config().proxy1_ip
 		proxy2 = config.Config().proxy2_ip
 		proxy3 = config.Config().proxy3_ip
+		await ctx.response.send_message("Please wait...")
 		try:
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228 or ctx.author.id == 1389333664000905426:
 				data = { "headers": sys_token, "command": "close" }
