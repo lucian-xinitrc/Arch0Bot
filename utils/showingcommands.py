@@ -26,12 +26,12 @@ class ShowingCommands():
 		try:
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228 or ctx.author.id == 1389333664000905426:
 				data = { "headers": sys_token, "command": "start" }
-				response_proxy1 = await requests.post(f"http://{proxy1}:8888/api/insertCommand", json=data)
+				response_proxy1 = requests.post(f"http://{proxy1}:8888/api/insertCommand", json=data)
 				result_proxy1 = response_proxy1.json()
 				if result_proxy1['status'] == "started":
 					await ctx.send("EU Proxy started!")
 
-				response_proxy2 = await requests.post(f"http://{proxy2}:8888/api/insertCommand", json=data)
+				response_proxy2 = requests.post(f"http://{proxy2}:8888/api/insertCommand", json=data)
 				result_proxy2 = response_proxy2.json()
 
 				if result_proxy2['status'] == "started":
@@ -41,7 +41,7 @@ class ShowingCommands():
 				result_proxy3 = response_proxy3.json()
 				if result_proxy3['status'] == "started":
 					await ctx.send("US WEST Proxy started!")
-				response_backend = await requests.post(f"http://{ip}:8888/api/insertCommand", json=data)
+				response_backend = requests.post(f"http://{ip}:8888/api/insertCommand", json=data)
 				result_backend = response_backend.json()
 				
 				if result_backend['status'] == "started":
@@ -82,22 +82,25 @@ class ShowingCommands():
 		try:
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228 or ctx.author.id == 1389333664000905426:
 				data = { "headers": sys_token, "command": "close" }
-				response_proxy1 = await requests.post(f"http://{proxy1}:8888/api/insertCommand", json=data)
+				response_proxy1 = requests.post(f"http://{proxy1}:8888/api/insertCommand", json=data)
 				result_proxy1 = response_proxy1.json()
+
 				if result_proxy1['status'] == "closed":
 					await ctx.send("EU Proxy closed!")
 
-				response_proxy2 = await requests.post(f"http://{proxy2}:8888/api/insertCommand", json=data)
+				response_proxy2 = requests.post(f"http://{proxy2}:8888/api/insertCommand", json=data)
 				result_proxy2 = response_proxy2.json()
 
 				if result_proxy2['status'] == "closed":
 					await ctx.send("US EAST Proxy closed!")
 
-				response_proxy3 = await requests.post(f"http://{proxy3}:8888/api/insertCommand", json=data)
+				response_proxy3 = requests.post(f"http://{proxy3}:8888/api/insertCommand", json=data)
 				result_proxy3 = response_proxy3.json()
+
 				if result_proxy3['status'] == "closed":
 					await ctx.send("US WEST Proxy closed!")
-				response_backend = await requests.post(f"http://{ip}:8888/api/insertCommand", json=data)
+
+				response_backend = requests.post(f"http://{ip}:8888/api/insertCommand", json=data)
 				result_backend = response_backend.json()
 				
 				if result_backend['status'] == "closed":
