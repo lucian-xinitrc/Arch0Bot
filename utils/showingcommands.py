@@ -50,8 +50,8 @@ class ShowingCommands():
 					await ctx.edit_original_response(content="There was an error, contact admin!")
 			else:
 				await ctx.edit_original_response(content="You have no permission!")
-		except Exception as e:
-			await ctx.edit_original_response(f"There was an error!: {e}")
+		except:
+			await ctx.edit_original_response(f"There was an error!:")
 
 	@prompt.slash_command(description="Inserts a command")
 	async def command_mc_server(inter, ctx, type: types, command):
@@ -110,8 +110,8 @@ class ShowingCommands():
 
 			else:
 				await ctx.edit_original_response("You have no permission!")
-		except Exception as e:
-			await ctx.edit_original_response(f"There was an error!: {e}")
+		except:
+			await ctx.edit_original_response(f"There was an error!")
 	
 	@prompt.slash_command(description="First Prompt")
 	async def help(inter, ctx):
