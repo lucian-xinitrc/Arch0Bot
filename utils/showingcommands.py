@@ -51,7 +51,7 @@ class ShowingCommands():
 			else:
 				await ctx.edit_original_response(content="You have no permission!")
 		except Exception as e:
-			await ctx.response.send_message(f"There was an error!: {e}")
+			await ctx.edit_original_response(f"There was an error!: {e}")
 
 	@prompt.slash_command(description="Inserts a command")
 	async def command_mc_server(inter, ctx, type: types, command):
@@ -100,14 +100,14 @@ class ShowingCommands():
 				result_backend = await response_backend.json()
 				
 				if result_backend['status'] == "closed":
-					await ctx.response.send_message("@everyone The server just closed!")
+					await ctx.edit_original_response("@everyone The server just closed!")
 				else:
-					await ctx.response.send_message("There was an error, contact admin!")
+					await ctx.edit_original_response("There was an error, contact admin!")
 
 			else:
-				await ctx.response.send_message("You have no permission!")
+				await ctx.edit_original_response("You have no permission!")
 		except Exception as e:
-			await ctx.response.send_message(f"There was an error!: {e}")
+			await ctx.edit_original_response(f"There was an error!: {e}")
 	
 	@prompt.slash_command(description="First Prompt")
 	async def help(inter, ctx):
