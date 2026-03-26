@@ -50,7 +50,7 @@ class ShowingCommands():
 					await ctx.edit_original_response(content="There was an error, contact admin!")
 			else:
 				await ctx.edit_original_response(content="You have no permission!")
-		except Exception as :
+		except Exception as e:
 			await ctx.response.send_message(f"There was an error!: {e}")
 
 	@prompt.slash_command(description="Inserts a command")
@@ -106,7 +106,7 @@ class ShowingCommands():
 
 			else:
 				await ctx.response.send_message("You have no permission!")
-		except Exception as :
+		except Exception as e:
 			await ctx.response.send_message(f"There was an error!: {e}")
 	
 	@prompt.slash_command(description="First Prompt")
