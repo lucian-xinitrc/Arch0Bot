@@ -42,7 +42,7 @@ class ShowingCommands():
 				if result_proxy3['status'] == "started":
 					await ctx.send("US WEST Proxy started!")
 				response_backend = await requests.post(f"http://{ip}:8888/api/insertCommand", json=data)
-				result_backend = await response_backend.json()
+				result_backend = response_backend.json()
 				
 				if result_backend['status'] == "started":
 					await ctx.edit_original_response(content="@everyone The server just started!")
@@ -98,7 +98,7 @@ class ShowingCommands():
 				if result_proxy3['status'] == "closed":
 					await ctx.send("US WEST Proxy closed!")
 				response_backend = await requests.post(f"http://{ip}:8888/api/insertCommand", json=data)
-				result_backend = await response_backend.json()
+				result_backend = response_backend.json()
 				
 				if result_backend['status'] == "closed":
 					await ctx.edit_original_response("@everyone The server just closed!")
