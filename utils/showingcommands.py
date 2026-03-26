@@ -22,6 +22,7 @@ class ShowingCommands():
 		proxy1 = config.Config().proxy1_ip
 		proxy2 = config.Config().proxy2_ip
 		proxy3 = config.Config().proxy3_ip
+		await ctx.response.send_message("Please wait!!!")
 		try:
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228 or ctx.author.id == 1389333664000905426:
 				data = { "headers": sys_token, "command": "start" }
@@ -44,13 +45,13 @@ class ShowingCommands():
 				result_backend = await response_backend.json()
 				
 				if result_backend['status'] == "started":
-					await ctx.response.send_message("@everyone The server just started!")
+					await ctx.edit_original_response(content="@everyone The server just started!")
 				else:
-					await ctx.response.send_message("There was an error, contact admin!")
+					await ctx.edit_original_response(content="There was an error, contact admin!")
 			else:
-				await ctx.response.send_message("You have no permission!")
+				await ctx.edit_original_response(content="You have no permission!")
 		except:
-			await ctx.response.send_message("There was an error!")
+			await ctx.edit_original_response(content="There was an error!")
 
 	@prompt.slash_command(description="Inserts a command")
 	async def command_mc_server(inter, ctx, type: types, command):
