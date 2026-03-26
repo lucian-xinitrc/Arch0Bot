@@ -37,7 +37,7 @@ class ShowingCommands():
 				if result_proxy2['status'] == "started":
 					await ctx.send("US EAST Proxy started!")
 
-				response_proxy3 = await requests.post(f"http://{proxy3}:8888/api/insertCommand", json=data)
+				response_proxy3 = requests.post(f"http://{proxy3}:8888/api/insertCommand", json=data)
 				result_proxy3 = response_proxy3.json()
 				if result_proxy3['status'] == "started":
 					await ctx.send("US WEST Proxy started!")
