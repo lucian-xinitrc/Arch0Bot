@@ -34,12 +34,12 @@ class ShowingCommands():
 				result_proxy2 = response_proxy2.json()
 
 				if result_proxy2['status'] == "started":
-					await.ctx.send("US EAST Proxy started!")
+					await ctx.send("US EAST Proxy started!")
 
 				response_proxy3 = await requests.post(f"http://{proxy3}:8888/api/insertCommand", json=data)
 				result_proxy3 = response_proxy3.json()
 				if result_proxy3['status'] == "started":
-					await.ctx.send("US WEST Proxy started!")
+					await ctx.send("US WEST Proxy started!")
 				response_backend = await requests.post(f"http://{ip}:8888/api/insertCommand", json=data)
 				result_backend = await response_backend.json()
 				
@@ -89,12 +89,12 @@ class ShowingCommands():
 				result_proxy2 = response_proxy2.json()
 
 				if result_proxy2['status'] == "closed":
-					await.ctx.send("US EAST Proxy closed!")
+					await ctx.send("US EAST Proxy closed!")
 
 				response_proxy3 = await requests.post(f"http://{proxy3}:8888/api/insertCommand", json=data)
 				result_proxy3 = response_proxy3.json()
 				if result_proxy3['status'] == "closed":
-					await.ctx.send("US WEST Proxy closed!")
+					await ctx.send("US WEST Proxy closed!")
 				response_backend = await requests.post(f"http://{ip}:8888/api/insertCommand", json=data)
 				result_backend = await response_backend.json()
 				
