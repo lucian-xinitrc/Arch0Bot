@@ -27,7 +27,7 @@ class ShowingCommands():
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228 or ctx.author.id == 1389333664000905426:
 				data = { "headers": sys_token, "command": "start" }
 				response_proxy1 = await requests.post(f"http://{proxy1}:8888/api/insertCommand", json=data)
-				result_proxy1 = await response_proxy1.json()
+				result_proxy1 = response_proxy1.json()
 				if result_proxy1['status'] == "started":
 					await ctx.send("EU Proxy started!")
 
@@ -82,7 +82,7 @@ class ShowingCommands():
 			if ctx.author.id == 1135659932000202942 or ctx.author.id == 1027255470429319228 or ctx.author.id == 1389333664000905426:
 				data = { "headers": sys_token, "command": "close" }
 				response_proxy1 = await requests.post(f"http://{proxy1}:8888/api/insertCommand", json=data)
-				result_proxy1 = await response_proxy1.json()
+				result_proxy1 = response_proxy1.json()
 				if result_proxy1['status'] == "closed":
 					await ctx.send("EU Proxy closed!")
 
