@@ -15,6 +15,7 @@ class Config():
 	proxy1_ip = os.getenv('proxy1')
 	proxy2_ip = os.getenv('proxy2')
 	proxy3_ip = os.getenv('proxy3')
+	rules = os.getenv('rules')
 	token = os.getenv('token')
 	db_url = os.getenv('dburl')
 	discord_bot_status_name = os.getenv('discord_bot_status_name')

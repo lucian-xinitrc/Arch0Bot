@@ -51,7 +51,7 @@ class ShowingCommands():
 			else:
 				await ctx.edit_original_response(content="You have no permission!")
 		except:
-			await ctx.edit_original_response(f"There was an error!:")
+			await ctx.edit_original_response(f"There was an error!")
 
 	@prompt.slash_command(description="Inserts a command")
 	async def command_mc_server(inter, ctx, type: types, command):
