@@ -98,8 +98,8 @@ class ArtificialIntelligence():
 	async def faq(inter, ctx, message):
 		rulesFaq = [{"role": "system", "content": os.getenv('rules') }]
 		try:
-			guild = inter.guild
-			server1 = bot.get_guild(1468746116332785777)
+			guild = ctx.guild
+			server1 = prompt.get_guild(1468746116332785777)
 			if guild == server1:
 				await ctx.response.defer()
 				rulesFaq.append({"role": "user", "content": message.content})
