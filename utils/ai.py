@@ -98,7 +98,7 @@ class ArtificialIntelligence():
 	async def faq(inter, ctx, message):
 		rulesFaq = [{"role": "system", "content": os.getenv('rules') }]
 		try:
-			rulesFaq.append({"role": "user", "content": message.content})
+			rulesFaq.append({"role": "user", "content": message})
 			client = OpenAI(api_key=config.Config().api_key_ai)
 			response = client.chat.completions.create(
 			    model="gpt-4o",
