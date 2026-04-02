@@ -111,8 +111,8 @@ class ArtificialIntelligence():
 				)
 				rulesFaq.append(response.choices[0].message)
 				await ctx.response.send_message(response.choices[0].message.content)
-		except:
-			await ctx.response.send_message("Something went wrong!")
+		except Exception as e:
+			await ctx.response.send_message(f"Something went wrong: {e}")
 
 	@prompt.slash_command(description="Image Generator")
 	async def image(inter, ctx, arg):
