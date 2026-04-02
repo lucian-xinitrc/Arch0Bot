@@ -110,9 +110,9 @@ class ArtificialIntelligence():
 			    	stream=False
 				)
 				rulesFaq.append(response.choices[0].message)
-				await message.reply(response.choices[0].message.content)
+				await ctx.message.reply(response.choices[0].message.content)
 		except:
-			await ctx.reply("Something went wrong!")
+			await ctx.message.reply("Something went wrong!")
 
 	@prompt.slash_command(description="Image Generator")
 	async def image(inter, ctx, arg):
