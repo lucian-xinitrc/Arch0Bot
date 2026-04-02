@@ -95,7 +95,7 @@ class ArtificialIntelligence():
 			await msg.edit("Your token expired.")
 	"""
 	@prompt.slash_command(description="Ada's Realm Faq")
-	async def faq(inter: disnake.ApplicationCommandInteraction,, message):
+	async def faq(inter: disnake.ApplicationCommandInteraction, message):
 		rulesFaq = [{"role": "system", "content": os.getenv('rules') }]
 		try:
 			guild = inter.guild
@@ -110,8 +110,8 @@ class ArtificialIntelligence():
 				)
 				rulesFaq.append(response.choices[0].message)
 				await inter.response.send_message(response.choices[0].message.content)
-		except Exception as e:
-			await inter.response.send_message(f"Something went wrong: {e}")
+		except:
+			await inter.response.send_message("Something went wrong!")
 
 	@prompt.slash_command(description="Image Generator")
 	async def image(inter, ctx, arg):
