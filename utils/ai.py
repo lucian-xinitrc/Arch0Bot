@@ -98,19 +98,15 @@ class ArtificialIntelligence():
 	async def faq(inter, ctx, message):
 		rulesFaq = [{"role": "system", "content": os.getenv('rules') }]
 		try:
-			guild = inter.guild
-			server1 = prompt.get_guild(1468746116332785777)
-			if guild == server1:
-				await ctx.response.defer()
-				rulesFaq.append({"role": "user", "content": message.content})
-				client = OpenAI(api_key=config.Config().api_key_ai)
-				response = client.chat.completions.create(
-			    	model="gpt-4o",
-			    	messages=rulesFaq,
-			    	stream=False
-				)
-				rulesFaq.append(response.choices[0].message)
-				await ctx.response.send_message(response.choices[0].message.content)
+			rulesFaq.append({"role": "user", "content": message})
+			client = OpenAI(api_key=config.Config().api_key_ai)
+			response = client.chat.completions.create(
+			    model="gpt-4o",
+			    messages=rulesFaq,
+			    stream=False
+			)
+			rulesFaq.append(response.choices[0].message)
+			await ctx.response.send_message(response.choices[0].message.content)
 		except Exception as e:
 			await ctx.response.send_message(f"Something went wrong: {e}")
 
